@@ -1,0 +1,28 @@
+{
+    "library": {
+        "TAreaDistribution" : {
+            "home": {
+                "title": "T Area Distributions",
+                "createLabel": "Create a new T Area Distribution",
+                "createOrEditLabel": "Create or edit a T Area Distribution",
+                "search": "Search for T Area Distribution"
+            },
+            "created": "A new T Area Distribution is created with identifier {{ param }}",
+            "updated": "A T Area Distribution is updated with identifier {{ param }}",
+            "deleted": "A T Area Distribution is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Area Distribution {{ id }}?"
+            },
+            "detail": {
+                "title": "T Area Distribution"
+            },
+            "id": "Id",
+            "name": "Name",
+            "place": "Place",
+            "operateTime": "Operate Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

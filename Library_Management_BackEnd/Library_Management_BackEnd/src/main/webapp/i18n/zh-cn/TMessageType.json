@@ -1,0 +1,28 @@
+{
+    "library": {
+        "TMessageType" : {
+            "home": {
+                "title": "T Message Types",
+                "createLabel": "Create a new T Message Type",
+                "createOrEditLabel": "Create or edit a T Message Type",
+                "search": "Search for T Message Type"
+            },
+            "created": "A new T Message Type is created with identifier {{ param }}",
+            "updated": "A T Message Type is updated with identifier {{ param }}",
+            "deleted": "A T Message Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Message Type {{ id }}?"
+            },
+            "detail": {
+                "title": "T Message Type"
+            },
+            "id": "Id",
+            "pid": "Pid",
+            "name": "Name",
+            "operateTime": "Operate Time",
+            "opertor": "Opertor",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

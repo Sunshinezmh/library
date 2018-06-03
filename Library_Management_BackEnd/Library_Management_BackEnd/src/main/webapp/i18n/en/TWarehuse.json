@@ -1,0 +1,32 @@
+{
+    "library": {
+        "TWarehuse" : {
+            "home": {
+                "title": "T Warehuses",
+                "createLabel": "Create a new T Warehuse",
+                "createOrEditLabel": "Create or edit a T Warehuse",
+                "search": "Search for T Warehuse"
+            },
+            "created": "A new T Warehuse is created with identifier {{ param }}",
+            "updated": "A T Warehuse is updated with identifier {{ param }}",
+            "deleted": "A T Warehuse is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Warehuse {{ id }}?"
+            },
+            "detail": {
+                "title": "T Warehuse"
+            },
+            "id": "Id",
+            "shelfId": "Shelf Id",
+            "isbn": "Isbn",
+            "wareCount": "Ware Count",
+            "useCount": "Use Count",
+            "author": "Author",
+            "status": "Status",
+            "operterTime": "Operter Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

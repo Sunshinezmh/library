@@ -1,0 +1,22 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-1" (click)="borrowing()">
+        <i class="fa fa-chevron-left left_icon"></i>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 title_top ">还书</div>
+    </div>
+  </div>
+</nav>
+<hr>
+<div class=" col-sm-4">
+    <p style="margin-top:80px;margin-left:19%;font-size:18px;">请上传还书位置照片完成还书(不上传也行哦)</p> 
+  <div class="form-group left-nav">   
+    <img id="wizardPicturePreview" name="picture" src="{{picture}}" style="height:200px; margin-top:60px; width:150px;display:block; border:1px solid #CCC"
+      alt="" class="picture-src" title="" />
+    <input #file type="file" [hidden]="false" id="wizard-picture" class="showPicture" accept="image/*" multiple ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged(file)">
+    <button type="button" style="margin-top:25px;margin-left:19%;" class="btn btn-default btn_gray" (click)="returnBook()">还书</button>
+  </div>
+</div>
+<p-growl [(value)]="msgs" ></p-growl>

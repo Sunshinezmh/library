@@ -1,0 +1,21 @@
+.condition{
+    border-width: none;
+    border-radius: 5px;
+    outline: none;
+    height: 35px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    width: 280px;
+    border-width: 1px;
+    border-color: #cccccc;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }

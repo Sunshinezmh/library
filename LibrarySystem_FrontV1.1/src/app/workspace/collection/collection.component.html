@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+    <div class="container header">
+        <div (click)="routeToHome()">
+            <i class="fa fa-chevron-left left_icon"></i>
+        </div>
+        <div>
+            <div class="header_input" style="width:100%;margin-right:-8%;margin-top:5%">
+                <input type="text" class="form-control " [(ngModel)]="condition" (change)="findColResult()" placeholder="书名/作者名" id="find"/>
+                <i class="fa fa-search " style="float:right;margin-right:-12%;margin-top:-13%" aria-hidden="true" (click)="findColResult()"></i>
+            </div>
+        </div>
+        <div style="float:right">
+            <a id="edit" (click)="edit()">编辑</a>
+        </div>
+        <div style="float:right">
+            <a id="delete" style="display: none" (click)="deleteCollections()">删除</a>
+        </div>
+    </div>
+</nav>
+<hr style="margin-top:-8%" />
+<div class="content" #content>
+    <div class="tab-content" id="myTabContent" style="margin-left:4%;">
+        <div class="home-noguess" *ngIf="borrowDetailJ.length==0">
+            <p style="font-size:16px;margin-top:100px;text-align:center;color:#AAAAAA;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">请将喜欢的书加入书架哟</p>
+        </div>
+        <div class="book">
+            <div class="img_container" *ngFor="let borrow of borrowDetailJ;let i = index">
+                <div *ngIf="i>2">
+                    &nbsp;
+                    <div> &nbsp;</div>
+                </div>
+                <img src={{borrow.picture?borrow.picture:backPicture}} (click)="keyup(i)" alt="">
+                <div class="book_name" style="clear:left" (click)="checkBook(chb,i)">
+                    <input #chb id="chb" class="chbs" type="checkbox" style="display:none" [(ngModel)]="checkboxlist[i]" (click)="chbClick()"> {{borrow.bookName}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-growl [(value)]="msgs"></p-growl>

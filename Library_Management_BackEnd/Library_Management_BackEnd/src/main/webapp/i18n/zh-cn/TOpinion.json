@@ -1,0 +1,28 @@
+{
+    "library": {
+        "TOpinion" : {
+            "home": {
+                "title": "T Opinions",
+                "createLabel": "Create a new T Opinion",
+                "createOrEditLabel": "Create or edit a T Opinion",
+                "search": "Search for T Opinion"
+            },
+            "created": "A new T Opinion is created with identifier {{ param }}",
+            "updated": "A T Opinion is updated with identifier {{ param }}",
+            "deleted": "A T Opinion is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Opinion {{ id }}?"
+            },
+            "detail": {
+                "title": "T Opinion"
+            },
+            "id": "Id",
+            "userId": "User Id",
+            "content": "Content",
+            "status": "Status",
+            "commitTime": "Commit Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete"
+        }
+    }
+}

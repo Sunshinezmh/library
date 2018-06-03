@@ -1,0 +1,29 @@
+{
+    "library": {
+        "TBookAndType" : {
+            "home": {
+                "title": "T Book And Types",
+                "createLabel": "Create a new T Book And Type",
+                "createOrEditLabel": "Create or edit a T Book And Type",
+                "search": "Search for T Book And Type"
+            },
+            "created": "A new T Book And Type is created with identifier {{ param }}",
+            "updated": "A T Book And Type is updated with identifier {{ param }}",
+            "deleted": "A T Book And Type is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Book And Type {{ id }}?"
+            },
+            "detail": {
+                "title": "T Book And Type"
+            },
+            "id": "Id",
+            "name": "Name",
+            "pid": "Pid",
+            "shelfId": "Shelf Id",
+            "operationTime": "Operation Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

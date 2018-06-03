@@ -1,0 +1,29 @@
+.books{
+    float:left;
+    width:50%;
+    padding: 30px;
+}
+.book_name{
+    text-align: center;
+    font-size: 30px;
+
+}
+.book_img{
+    height: 200px;
+    text-align: center;
+    margin-top: 15px;
+}
+img{
+    height:200px;
+    width:200px;
+}
+p{
+    margin: 10px;
+    padding-left: 120px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+input{
+    width: 220px;
+}

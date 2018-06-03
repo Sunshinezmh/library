@@ -1,0 +1,28 @@
+{
+    "library": {
+        "TRenewal" : {
+            "home": {
+                "title": "T Renewals",
+                "createLabel": "Create a new T Renewal",
+                "createOrEditLabel": "Create or edit a T Renewal",
+                "search": "Search for T Renewal"
+            },
+            "created": "A new T Renewal is created with identifier {{ param }}",
+            "updated": "A T Renewal is updated with identifier {{ param }}",
+            "deleted": "A T Renewal is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Renewal {{ id }}?"
+            },
+            "detail": {
+                "title": "T Renewal"
+            },
+            "id": "Id",
+            "borrowId": "Borrow Id",
+            "startTime": "Start Time",
+            "operterTime": "Operter Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

@@ -1,0 +1,110 @@
+
+hr{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+a{
+    color:black;
+}
+a:hover{
+    color:#007ACC;
+}
+.home-title{
+    font-size: 25px;
+    font-family: 楷体;
+    line-height: 50px;
+}
+
+.content{
+    min-height: 80%;
+    max-height: 90%;
+    padding-top:60px;
+    overflow: auto;
+}
+/* 灰色条 */
+.gray_area{
+     height: 3px;
+    background-color:#DFDBDB;
+}
+/* 灰色线 */
+.gray_line{
+    height: 1px;
+    background-color:#DFDBDB;
+}
+/* 书籍区域 */
+.book_container{
+    height: 200px;
+}
+.user_photo{
+    border-radius: 50%;
+    background-color: #eeeeee;
+}
+.user_name{
+    text-decoration: underline;
+}
+.user_info{
+    text-align: center;
+    margin-bottom: 5px;
+}
+.left_icon{
+    margin-top:15px;
+}
+.right-icon{
+    float:right;
+    margin-right:20px;
+}
+.right-icon-first{
+    margin-left:55%;
+}
+
+.book_info{
+    float:right;
+    margin-right:18%;
+    margin-top:10px;
+   font-size: 20px;
+   line-height: 120%;
+}
+.book_remind{
+  font-size: 22px;
+
+   line-height: 120%;
+   font-family: 楷体;
+}
+.book_remind p:first-child{
+    margin-top: 20px;
+}
+
+
+.book_picture{
+    height:68px;
+    width:60px;
+    margin-left:5%;
+}
+.borrow_div{
+    max-height: 75px;
+    overflow-y :auto;
+    min-height:75px;
+    width:400px;
+}
+
+.borrow_div span{
+    margin-left:80%;
+    background-color: #DFDBDB;
+    padding:3px 5px 3px 5px;
+    border-radius: 1px;
+
+}
+.borrow_book{
+    margin-top:5px;
+}
+.foot_div{
+    font-family: 楷体;
+    font-size: 20px;
+    border:1px solid #eeeeee;
+    padding:15px 0px 15px 0;
+}
+.foot_div >div + div{
+    margin-top:20px;
+    border:1px solid #eeeeee;
+}
+

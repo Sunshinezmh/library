@@ -1,0 +1,31 @@
+<div style="width:100%;height:100%;">
+    <div class="container">
+        <div style="text-align:center;margin-top:30px; font-size:20px;font-family:Helvetica">
+            <h2 class="form-signin-heading" style="margin-left:auto;margin-right:auto;margin-top:120px;">欢迎登陆</h2>
+        </div>
+        <form ng-submit="login(form)" style="width:auto;margin-top:40px;">
+            <label style="width:atuo;float:left;margin-bottom:20px;">用户名：</label>
+
+            <input [(ngModel)]="user.userCode" name="userCode" id="inputUsername" class="form-control" placeholder="请输入手机号" required=""
+                autofocus="" style="width:70%;margin-bottom:20px;background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+
+            <label for="inputPassword" style="float:left;">密　码：</label>
+
+            <input [(ngModel)]="user.password" type="password" name="password" id="inputPassword" class="form-control" placeholder="请输入密码"
+                required="" style="width:70%; background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: auto;">
+
+
+
+        </form>
+        <div>
+            <button class="btn btn-lg btn-primary btn-block" style="width:45%;margin-left:auto;margin-right:auto;margin-top:30px;background-color:rgb(253, 209, 0);color:black;font-weight:bold;border:0;border-radius:5px 5px 5px 5px;"
+                type="submit" (click)="login()">登录</button>
+
+        </div>
+        <div style="margin-top:15px;">
+            <a href="#/workspace/home" style="margin-left:40%;font-family:'楷体';font-size:15px">看看再说>></a>
+        </div>
+    </div>
+</div>
+<p-growl [(value)]="msgs" ></p-growl>
+<p-confirmDialog></p-confirmDialog>

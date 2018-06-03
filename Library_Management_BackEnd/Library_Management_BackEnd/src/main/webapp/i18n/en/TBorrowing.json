@@ -1,0 +1,36 @@
+{
+    "library": {
+        "TBorrowing" : {
+            "home": {
+                "title": "T Borrowings",
+                "createLabel": "Create a new T Borrowing",
+                "createOrEditLabel": "Create or edit a T Borrowing",
+                "search": "Search for T Borrowing"
+            },
+            "created": "A new T Borrowing is created with identifier {{ param }}",
+            "updated": "A T Borrowing is updated with identifier {{ param }}",
+            "deleted": "A T Borrowing is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Borrowing {{ id }}?"
+            },
+            "detail": {
+                "title": "T Borrowing"
+            },
+            "id": "Id",
+            "bookId": "Book Id",
+            "userId": "User Id",
+            "borrowTime": "Borrow Time",
+            "realDate": "Real Date",
+            "endDate": "End Date",
+            "damageId": "Damage Id",
+            "compensation": "Compensation",
+            "isOverdue": "Is Overdue",
+            "overdueMoney": "Overdue Money",
+            "renew": "Renew",
+            "operateTime": "Operate Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

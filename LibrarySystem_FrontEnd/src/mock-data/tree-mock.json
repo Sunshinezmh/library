@@ -1,0 +1,26 @@
+{
+    "code":"0000",
+    "mesagge":"查询正确",
+    "data":[
+        {"id":"temp","pId":111,"nid":"1","name":"题型模板"},
+        {"id":"en","pId":"temp","nid":"1","name":"英语题"},
+        {"id":"1","pId":"en","nid":"1","name":"单选题"},
+        {"id":"2","pId":"en","nid":"1","name":"多选题"},
+        {"id":"0","pId":"en","nid":"1","name":"填空题"},
+        {"id":"3","pId":"en","nid":"1","name":"题型模板"},
+        {"id":"4","pId":"en","nid":"1","name":"题型模板"},
+        {"id":"5","pId":"en","nid":"1","name":"题型模板"},
+        {"id":"6","pId":"en","nid":"1","name":"题型模板"},
+        {"id":"7","pId":"en","nid":"1","name":"题型模板"},
+        {"id":"8","pId":"en","nid":"1","name":"题型模板"},
+
+        {"id":"es","pId":"temp","nid":"2","name":"文科题"},
+        {"id":"1","pId":"es","nid":"2","name":"题型模板"},
+        {"id":"2","pId":"es","nid":"2","name":"题型模板"},
+        {"id":"9","pId":"es","nid":"2","name":"题型模板"},
+        {"id":"10","pId":"es","nid":"2","name":"题型模板"}, 
+         {"id":"11","pId":"es","nid":"2","name":"题型模板"},
+        {"id":"12","pId":"es","nid":"2","name":"题型模板"}
+
+        ]
+}

@@ -1,0 +1,59 @@
+            <div style="padding:18px">
+                   
+                <div style="height:450px;width:450px;margin:0 auto;padding:20;background-color: rgb(148, 195, 240); " >   
+                     <div  *ngIf="bookInfoName == null"> 
+                        <div class="alert alert-success"  >
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Warning!</strong> 您现在没有无图片的书籍，无须上传图片！
+                        </div>      
+                    </div> 
+                    <div  *ngIf="autobookpicture == 1"> 
+                        <div class="alert alert-success"  >
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Success!</strong>图片已经自动捕获，无须上传图片！
+                        </div>      
+                    </div> 
+                    <div class="form-group left-nav">
+                        <img id="wizardPicturePreview" name="picture" src="{{picture}}" style="height:200px; width:150px;display:block; border:3px solid #CCC"
+                            alt="封面" class="picture-src" title="" />
+                        <input #file type="file" [hidden]="false" id="wizard-picture" class="showPicture" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged(file)">
+                    </div>
+                    <p style="background-color: rgb(34, 141, 202);height:20px;color:#251d1d; font-family: 楷体;">显示没有图片的信息</p>
+                    <!-- <select class="form-control" (change)="upbookoption($event.target.value)" >                       
+                        <option *ngFor="let option of bookInfoList ; let i=index" [value]="option">{{option}}</option>                       
+                    </select> -->
+                    <select #sel class="form-control" (change)="upbookoption($event.target.value)" [(ngModel)]="bookisbn" >                       
+                        <option *ngFor="let option of bookInfoList ; let i=index"[value]="option.isbn">{{option.name}}</option>                       
+                    </select>
+
+                    <div>
+                            <button class="btn btn-primary" style="margin-top:20px; margin-left:180px;" (click)="loadPicture()">上传</button>
+                    </div>
+                
+                </div>          
+                <div class="modal" id="my-modal-alert">  
+                    <div class="modal-dialog">  
+                        <div class="modal-content">  
+                            <div class="modal-header">  
+                                <button type="button" class="close" data-dismiss="modal">  
+                                    <span aria-hidden="true">×</span><span class="sr-only">Close</span>  
+                                </button>  
+                                <h4 class="modal-title" id="modal-title">温馨提示</h4><span id="num"></span>  
+                            </div>  
+                            <!--/*modal-header*/-->  
+                            <div class="modal-body">  
+                                <div id="modal_message"><span id="message">modal_message</span></div>  
+                            </div>  
+                            <!--/*modal-body*/-->  
+                            <div class="modal-footer" id="modal-footer">  
+                                <button type="button" class="btn btn-default" data-dismiss="modal">确定</button>  
+                                <!--/*modal-body*/-->  
+                            </div>  
+                            <!--/*modal-footer*/-->  
+                        </div>  
+                        <!--/*modal-dialog*/-->  
+                    </div>  
+                    <!--/*modal-content*/-->  
+                </div>  
+                 
+            </div>

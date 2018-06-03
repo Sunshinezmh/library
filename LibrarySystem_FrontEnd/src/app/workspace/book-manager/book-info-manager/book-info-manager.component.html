@@ -1,0 +1,317 @@
+<p-dialog header="提示" [(visible)]="displayP" modal="modal" width="400" [responsive]="true">
+  <p style="text-align:center">
+    {{message}}
+  </p>
+  <p-footer>
+    <button type="button" pButton (click)="displayP=false" label="确定">
+    </button>
+  </p-footer>
+</p-dialog>
+<p-dialog header="导入文件" [(visible)]="display" modal="modal" width="500" [responsive]="true" [@fadeIn]>
+  <p>提示：导入前请先下载模板
+    <a style="color:#41ABE9" (click)="down()">点击下载模板</a>
+  </p>
+  <div style="text-align:center;display:none">
+    <input #filepath type="file" name="filePath" value="选择文件" style="display:none" ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)">
+  </div>
+
+  <input class="form-control" type="text" placeholder="选择文件" style="width:50%;height:25px;display:inline" [(ngModel)]="filename">
+  <button type="button" pButton (click)="show(filepath)" label="选择文件"></button>
+
+  <p-footer>
+    <button type="button" pButton icon="fa-check" (click)="upload()" label="上传"></button>
+    <button type="button" pButton icon="fa-close" (click)="display=false" label="取消"></button>
+  </p-footer>
+
+</p-dialog>
+
+<!--查询按钮以及查询框 -->
+<!-- <div style="width: 350px; margin-left:40%; margin-bottom:10px; margin-top:5%" [@fadeIn]>
+  <app-search [information]="information" [url]="searchUrl" (editData)="query($event)"></app-search>
+</div>     -->
+<div style="width: 350px; margin-left:40%; margin-bottom:10px; margin-top:5%">
+  <input class="condition" type="text" placeholder="/作者/书名/摘要/所有者" [(ngModel)]="condition" />
+  <button type="button" class="btn btn-primary btn" (click)="query()">查询</button>
+</div>
+
+
+<!-- 树组件 -->
+<div class="col-md-2" id="treemenu" style="width:60px;" [@fadeIn]>
+  <app-tree [institutionId]="treeURL" [treeTitle]="'图书分类'" (editData)="treeClick($event)"></app-tree>
+</div>
+
+
+<!-- 表格显示 -->
+<div class="container" style="margin-left:220px ;margin-bottom:10px" [@fadeIn]>
+  <div class="row">
+    <data-table (deletesEmit)="deleteDatas($event)" (linkClickEmitData)="linkClick($event)" [isCheckBox]="isCheck" [isLink]="isLink"
+      [editButton]="btnEdit" [title]="title" [page]="page" [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event,editModal)"
+      [importButton]="btnImport" [exportButton]="btnExport" [total]="total" [data]="data" [arr]="arrbutes" (exportEmit)="export($event)"
+      (changepage)="changepage($event)" [sizeList]="sizeList" [paging]="paging" [pageSize]="pageSize" (importEmit)="importFile($event)"
+      (addOpen)="open($event,modal)">
+    </data-table>
+  </div>
+</div>
+
+
+
+<!-- 添加打开模态框 -->
+<div #modal (click)="draggable()" class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%" [@fadeIn]>
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="close(modal)">×
+      </button>
+      <h4 class="modal-title">
+        添加图书
+      </h4>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group" style="border-width:0ch">
+        <label class="col-sm-3 control-label">ISBN：</label>
+        <div class="col-sm-9">
+          <!--限制输入只能是字母和数字/限制位数必须是13位-->
+          <input #ISBN type="text" id="isbnInput" #isbnInput="ngModel" class="form-control" [(ngModel)]="bookInfoManagerModel.isbn"
+            name="isbn" placeholder="请输入isbn号" (change)="showChange(ISBN)" maxlength="13" minlength="8" onkeyup="value=value.replace(/[\W]/g,'')"
+            required>
+          <span [hidden]="isbnInput.valid || isbnInput.pristine" style="color:#a94442">isbn最短为8位</span>
+          <!-- <p-growl [(value)]="msgs"></p-growl> -->
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">书名：</label>
+        <div class="col-sm-9">
+          <input type="text" maxlength="80" class="form-control" [(ngModel)]="bookInfoManagerModel.bookName" name="bookName" maxlength="50"
+            (change)="inputMsg(ISBN)" placeholder="请输入书名" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" required>
+          <span [hidden]="isbnInput.valid || isbnInput.pristine" style="color:#a94442">书名为必填项</span>
+
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">图片封面：</label>
+        <div class="col-sm-9">
+          <input type="file" [hidden]="false" id="wizard-picture" class="showPicture" ng2FileSelect [uploader]="uploaderAddBack" (change)="selectedFileOnChange($event)">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label"> 作者：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.author" name="author" maxlength="30"
+            (change)="inputMsg(ISBN)" placeholder="请输入作者名" onkeyup="value=value.replace(/[^\w\.\[\]\u4E00-\u9FA5]/g, '')">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">目录：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.content" name="content" (change)="inputMsg(ISBN)"
+            placeholder="请输入目录" onkeyup="value=value.replace(/[^\w\,\(\)\:;|；|“|”\-{2}\.{3}\u4E00-\u9FA5]/g, '')">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">摘要：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.summary" name="summary" (change)="inputMsg(ISBN)"
+            placeholder="请输入摘要" onkeyup="value=value.replace(/[^\w\,\(\)\:;|；|“|”\-{2}\.{3}\u4E00-\u9FA5]/g, '')">
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">数量：</label>
+        <div class="col-sm-9">
+          <input type="number" class="form-control" name="useNum" [(ngModel)]="bookInfoManagerModel.useNum" placeholder="请输入图书的数量"
+            #appLte="ngModel" [lte]="5000" onkeyup="value=value.value(/^[1-9]\d{0}$/)">
+
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">总页数：</label>
+        <div class="col-sm-9">
+          <input type="Number" class="form-control" name="totalpage" [(ngModel)]="bookInfoManagerModel.totalpage" placeholder="请输入图书的总页数"
+            #appLte="ngModel" [lte]="5000">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label style=margin-top:20px class="col-sm-3 control-label">书籍位置：</label>
+        <div style=margin-top:20px class="col-sm-9">
+          <select #location class="form-control" required (change)="inputMsg(ISBN)" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+            <option *ngFor="let option of getBookLocationOptions" >{{option}}</option>
+          </select>
+          <br>
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">出版时间：</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" name="publishtime" [(ngModel)]="bookInfoManagerModel.publishtime">
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style=margin-top:20px class="col-sm-3 control-label">出版社</label>
+        <div style=margin-top:20px class="col-sm-7">
+          <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.publishPlace" name="publishPlace"
+            placeholder="请输入出版社" (change)="inputMsg(ISBN)" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label style=margin-top:20px class="col-sm-3 control-label">分类：</label>
+        <div style=margin-top:20px class="col-sm-9">
+          <select #typeName class="form-control" required (change)="inputMsg(ISBN)" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+            <option *ngFor="let option of getBookTypeOptions" [value]="option.name">{{option.name}}</option>
+          </select>
+          <br>
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">来源：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" maxlength="50" [(ngModel)]="bookInfoManagerModel.owner" name="owner" (change)="inputMsg(ISBN)"
+            placeholder="请输入图书的来源" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label"> 备注：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.remark" name="remark" (change)="inputMsg(ISBN)"
+            placeholder="请输入备注" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="close(modal)">关闭
+      </button>
+      <button type="button" class="btn btn-primary" (click)="save(typeName.value,location.value,modal,bookInfoManagerModel)">
+        提交更改
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<!-- 编辑打开模态框 -->
+<!--<div #editModal (click)="draggable()" class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%" [@fadeIn] >-->
+<div #editModal (click)="draggable()" class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%" [@fadeIn]>
+  <div class="modal-content" id="linda">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="close(editModal)">×
+      </button>
+      <h4 class="modal-title">
+        编辑图书信息
+      </h4>
+    </div>
+    <div class="modal-body">
+      <form role="form" class="form-horizontal" #form="ngForm">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">ISBN：</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.isbn" name="isbn" (change)="showChange(ISBN)" disabled>
+            <br>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">书名：</label>
+          <div class="col-sm-9">
+            <input type="text" maxlength="80" class="form-control" [(ngModel)]="bookInfoManagerModel.bookName" name="bookName" maxlength="50"
+              onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" required>
+            <span [hidden]="isbnInput.valid || isbnInput.pristine" style="color:#a94442">书名为必填项</span>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label"> 作者：</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.author" name="author" maxlength="50"
+              onkeyup="value=value.replace(/[^\w\.\[\]\u4E00-\u9FA5]/g, '')">
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">目录：</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.content" name="content" onkeyup="value=value.replace(/[^\w\,\(\)\:;|；|“|”\-{2}\.{3}\u4E00-\u9FA5]/g, '')">
+            <br>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">摘要：</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.summary" name="summary" onkeyup="value=value.replace(/[^\w\,\(\)\:;|；|“|”\-{2}\.{3}\u4E00-\u9FA5]/g, '')">
+            <br>
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label style=margin-top:20px class="col-sm-3 control-label">书籍位置：</label>
+          <div style=margin-top:20px class="col-sm-9">
+            <select #location class="form-control" [(ngModel)]="bookInfoManagerModel.location" name="location" onkeyup="value=value.replace(/[^\w\,\(\)\:;|；|“|”\-{2}\.{3}\u4E00-\u9FA5]/g, '')">
+          <option *ngFor="let option of getBookLocationOptions" value={{option}}>{{option}}</option>
+        </select>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">库存量</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" maxlength="40" [(ngModel)]="bookInfoManagerModel.wareCount" name="language" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')"
+              disabled>
+            <br>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-3 control-label">可用量</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" maxlength="40" [(ngModel)]="bookInfoManagerModel.useNum" name="language" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')"
+              disabled>
+            <br>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label">出版社：</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.publishPlace" name="publishPlace"
+              onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+            <br>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-3 control-label"> 备注：</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.remark" name="remark" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+            <br>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="close(editModal)">关闭
+      </button>
+      <button type="button" class="btn btn-primary" (click)="updateBook(editModal,bookInfoManagerModel)">
+        提交更改
+      </button>
+    </div>
+  </div>
+
+</div>

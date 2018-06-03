@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+  <div class="container header">
+    <div (click)="booktype()">
+      <i class="fa fa-chevron-left left_icon"></i>
+    </div>
+    <div>
+      <p style="padding-left:20px;font-family:'楷体';font-weight:bold;font-size:20px">{{name}}  &nbsp;剩余书籍{{num}}本</p>
+    </div>
+    <div>
+      <p></p>
+    </div>
+
+  </div>
+</nav>
+<div class="content">
+  <!-- <div class="home-noguess" *ngIf="sonTypeModels.length==0">
+    <p style="font-size:16px;margin-top:100px;text-align:center;color:#AAAAAA;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">{{name}}类没有图书</p>
+  </div> -->
+  <div class="line-wrapper" *ngFor="let book of sonTypeModels">
+    <div class="line-scroll-wrapper" #scorewrapper>
+      <div class="line-normal-wrapper" #nomalwrapper>
+        <img class="img" src={{book.picture?book.picture:backPicture}} (click)="routeToBookInfo(book)" />
+        <div class="book_name" (click)="routeToBookInfo(book)">{{book.bookName}}</div>
+      </div>
+    </div>
+  </div>
+</div>

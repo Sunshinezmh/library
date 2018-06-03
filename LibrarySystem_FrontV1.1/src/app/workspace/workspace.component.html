@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+
+<div class="nav" style="z-index:2;">       
+    <ul>      
+     <div class="change"> 
+         <li (click)="home()" >
+            <a  href="#/workspace/home"><span><img  src={{imgHomeUrl}} height="30"></span><span>首页</span></a>
+         </li>  
+    </div>    
+    <div class="change"> 
+        <li (click)="booktype()">
+            <a href="#/workspace/book-type"><span><img src={{imgBooksUrl}} height="30" width="30%"></span><span>书城</span></a>
+        </li>
+    </div> 
+    <div class="change" >   
+        <li  (click)="collection()">
+            <a href="#/workspace/collection"><span><img click="change()" style-color= red src={{imgCollectionUrl}} height="30" width="30%"></span><span>书架</span></a>
+        </li>
+    </div> 
+    <div class="change">  
+        <li  (click)="Login()">
+            <span><img src={{imgMeUrl}} height="30"  width="30%"></span><span> 我</span>
+        </li>
+    </div> 
+    </ul>
+</div>

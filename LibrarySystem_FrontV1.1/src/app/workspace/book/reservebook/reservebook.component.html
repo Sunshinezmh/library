@@ -1,0 +1,63 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+  <div class="container ">
+    <div class="header">
+      <div class="back_icon">
+        <i class="fa fa-chevron-left left_icon" (click)="previousPage()"></i>
+      </div>
+      <span class="form-signin-heading reservation_info">我的预约</span>
+      <div class="right_icon">
+        <i class="fa fa-search " aria-hidden="true" (click)="search()"></i>
+      </div>
+    </div>
+
+  </div>
+</nav>
+<hr>
+
+<div class="content">
+  <div *ngIf="borrowReservations!=null && borrowReservations.length>0" class="tab-content " id="myTabContent">
+      
+    <div class="pdiv"><p class="info">可借阅</p></div>
+    <hr>
+    <div class="line-wrapper" *ngFor="let reservation of borrowReservations,let i=index" #linewrapper>
+      <div class="line-scroll-wrapper" #scorewrapper>
+        <div class="line-normal-wrapper"  #nomalwrapper>
+         
+          <img class="img" src={{reservation.picture?reservation.picture:backPicture}}  (click)="keyup(i)"/>
+          <div class="book_info"   >
+            <div class="book_name" (click)="keyup(i)" >{{reservation.bookName}}</div>
+           
+            <span class="book_author" (click)="keyup(i)">书籍位置： {{reservation.location}}</span>
+            <input class="exit" type="button" value="取消" (click)="cancelBorrowReserve(i)">
+          </div>
+        </div>
+        <div class="line-btn-delete">
+          <button class="btn btn-default btn-sm " (click)="cancelBorrowReserve(i)">取消预约</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="noBorrowReservations!=null && noBorrowReservations.length>0" >
+   
+    <div class="pdiv"> <p>暂不可借阅</p></div>
+    <hr>
+  </div>
+  <div class="line-wrapper" *ngFor="let reservation of noBorrowReservations,let i=index " #linewrapper>
+    <div class="line-scroll-wrapper" #scorewrapper >
+      <div class="line-normal-wrapper"  #nomalwrapper >
+        <img class="img" src={{reservation.picture?reservation.picture:backPicture}} (click)="keyup(i+borrowReservations.length)" />
+        <div class="book_info">
+          <div class="book_name" (click)="keyup(i+borrowReservations.length)"><b>{{reservation.bookName}}</b></div>
+          <span class="book_author" (click)="keyup(i+borrowReservations.length)" >书籍位置： {{reservation.location}}</span>
+          <input class="exit" type="button" value="取消" (click)="cancelNoBorrowReserve(i)">
+        </div>
+      </div>
+      <!-- <div class="line-btn-delete">
+        <button class="btn btn-default btn-sm " (click)="cancelNoBorrowReserve(i)">取消预约</button>
+      </div> -->
+    </div>
+  </div>
+</div>

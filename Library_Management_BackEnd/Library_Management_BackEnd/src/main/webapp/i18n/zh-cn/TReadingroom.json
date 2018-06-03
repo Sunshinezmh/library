@@ -1,0 +1,27 @@
+{
+    "library": {
+        "TReadingroom" : {
+            "home": {
+                "title": "T Readingrooms",
+                "createLabel": "Create a new T Readingroom",
+                "createOrEditLabel": "Create or edit a T Readingroom",
+                "search": "Search for T Readingroom"
+            },
+            "created": "A new T Readingroom is created with identifier {{ param }}",
+            "updated": "A T Readingroom is updated with identifier {{ param }}",
+            "deleted": "A T Readingroom is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Readingroom {{ id }}?"
+            },
+            "detail": {
+                "title": "T Readingroom"
+            },
+            "id": "Id",
+            "name": "Name",
+            "place": "Place",
+            "areaId": "Area Id",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

@@ -1,0 +1,46 @@
+  
+<div class="container" style="margin-left:100px ;margin-top:10px;">
+  
+ <!-- <div  style=margin-top:20px;margin-left:0%;width:580px;float:left;> -->
+    <label style=margin-top:40px;margin-left:200px;float:left >盘点书籍位置：</label>
+    <select  #select class="form-control" [(ngModel)]="location" (change)="checkResult(select.value)" style="width:100px;margin-left:1px;margin-top:35px;float:left " >
+      <option  *ngFor="let model of parentTypeModels; let i=index" [value]="model">{{model}}</option>
+    </select>
+  
+<!-- <div style=margin-top:20px;margin-left:0%;> -->
+  <label style="float:left;margin-top:40px;margin-left:20px" for="borrNum">请扫入ISBN：</label>
+  <input #isbn id="isbn" type="text" class="form-control"  [(ngModel)]="value" (change)="checking(select.value)" onkeyup="value=value.replace(/[^\d]/g,'')" style="width:100px;margin-top:35px;float:left">
+
+<button style="margin-top:35px;margin-left:20px" type="button" (click)=start(select.value) class="btn btn-default">盘点开始 </button>
+<button style="margin-top:35px;margin-left:20px" type="button" (click)=checkend(select.value) class="btn btn-default">盘点结束 </button>
+  <!-- <div class="row">
+    <data-table (deletesEmit)="deleteDatas($event)" (linkClickEmitData)="linkClick($event)" [isLink]="isLink" [editButton]="btnEdit"
+      [title]="title" [page]="page" [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event,editModal)" [importButton]="btnImport"
+      [exportButton]="btnExport" [total]="total" [data]="data" [arr]="arrbutes" (exportEmit)="export(select.value)" (changepage)="changepage($event)"
+      [sizeList]="sizeList" [paging]="paging" [pageSize]="pageSize" (importEmit)="importFile($event)" (addOpen)="open($event,modal)">
+    </data-table>
+  </div> -->
+  <div class="row" style="margin-top:2% ;width:93%" >
+    <data-table (deletesEmit)="deleteDatas($event)" 
+      [ButtonHeaders]="buttonHeaders" (changepage)="changepage($event)" 
+      [isCheckBox] = "isCheck" [isLink]="isLink"  [editButton]="btnEdit"
+      (operat)="operatData($event,modalEdit)"   [title]="title" [page] ="page" 
+      [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event,editModal)"
+       [importButton]="btnImport" [exportButton] = "btnExport" [total]="total" 
+      [data]="data" [arr]="arrbutes" (exportEmit)="export(select.value)"     
+      [sizeList]="sizeList" [paging]="paging" [pageSize]="pageSize" 
+       (addOpen)="open($event,modal)">
+    </data-table>
+  </div>
+  <p-growl [(value)]="msgs"></p-growl>
+  <p-dialog header="提示" [(visible)]="displayP" modal="modal" width="400" [responsive]="true">
+    <p style="text-align:center">
+        {{message}}
+    </p>
+    <p-footer>
+        <button type="button" pButton (click)="displayP=false" label="确定">
+        </button>
+    </p-footer>
+  </p-dialog>
+  <!-- <p-confirmDialog header="提示" icon="fa fa-question-circle" width="425"></p-confirmDialog> -->
+</div>

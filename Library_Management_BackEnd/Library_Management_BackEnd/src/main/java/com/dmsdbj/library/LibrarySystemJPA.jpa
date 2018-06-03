@@ -1,0 +1,1488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="com.mycompany.mavenproject1" v="4.4" rws="_1510149226872853" Pws="_1510149226872853" cws="_1510149226872853" sm="false" xs="false" id="_1510149226728442" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity compositePrimaryKeyClass="TAreaDistributionPK" abs="false" class="TAreaDistribution" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226728443">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226730479">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="place" id="_1510149226730480">
+                <jpa:column name="place" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution" precision="8" scale="0"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226730481">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226730482">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226730483">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226730484">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226730485">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_area_distribution"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226730478">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_area_distribution" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_area_distribution"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TRenewalPK" abs="false" class="TRenewal" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226728444">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="borrowId" id="_1510149226730487">
+                <jpa:column name="borrow_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="startTime" id="_1510149226730488">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="start_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="xujieTime" id="_1510149226730489">
+                <jpa:column name="xujie_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226730490">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226730491">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226730492">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226730493">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226730494">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_renewal"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226730486">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_renewal" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_renewal"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TDictionaryPK" abs="false" class="TDictionary" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730445">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_1510149226730496">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226730497">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226730498">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731499">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731500">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731501">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226731502">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226730495">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_dictionary" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_dictionary"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TReviewPK" abs="false" class="TReview" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730446">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="agreeCount" id="_1510149226731504">
+                <jpa:column name="agree_count" unique="false" nullable="true" insertable="true" updatable="true" table="t_review"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226731505">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_review" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="disagreeCount" id="_1510149226731506">
+                <jpa:column name="disagree_count" unique="false" nullable="true" insertable="true" updatable="true" table="t_review"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="pid" id="_1510149226731507">
+                <jpa:column name="PID" unique="false" nullable="true" insertable="true" updatable="true" table="t_review" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="reviewContent" id="_1510149226731508">
+                <jpa:column name="review_content" unique="false" nullable="true" insertable="true" updatable="true" table="t_review" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226731509">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_review" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731510">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_review" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731511">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_review"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731512">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_review"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226731513">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_review"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226731503">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_review" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_review"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TAnnouncementPK" abs="false" class="TAnnouncement" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730447">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="title" id="_1510149226731515">
+                <jpa:column name="title" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement" length="80"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_1510149226731516">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="picture" id="_1510149226731517">
+                <jpa:column name="picture" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="startDate" id="_1510149226731518">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="start_date" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="endDate" id="_1510149226731519">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="end_date" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="type" id="_1510149226731520">
+                <jpa:column name="type" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226731521">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731522">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731523">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isdelete" id="_1510149226731524">
+                <jpa:column name="Is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731525">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_announcement"/>
+            </jpa:basic>
+            <jpa:id attribute-type="Integer" v="true" name="id" id="_1510149226731514">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_announcement"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_announcement"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TNotesPK" abs="false" class="TNotes" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730448">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_1510149226731527">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226731528">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226731529">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isPublic" id="_1510149226731530">
+                <jpa:column name="is_public" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731531">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731532">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731533">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226731534">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_notes"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226731526">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_notes" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_notes"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TOpinionPK" abs="false" class="TOpinion" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730449">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226731536">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_1510149226731537">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="status" id="_1510149226731538">
+                <jpa:column name="status" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion" length="30"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731539">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731540">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731541">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226731542">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_opinion"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226731535">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_opinion" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_opinion"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TFollowPK" abs="false" class="TFollow" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730450">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="followId" id="_1510149226731544">
+                <jpa:column name="follow_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="unfollow" id="_1510149226731545">
+                <jpa:column name="unfollow" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731546">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226731547">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731548">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731549">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226731550">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_follow"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226731543">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_follow" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_follow"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TBookPK" abs="false" class="TBook" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730451">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="basicId" id="_1510149226731552">
+                <jpa:column name="basic_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="origin" id="_1510149226731553">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="origin" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="searchNum" id="_1510149226731554">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="search_num" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="status" id="_1510149226731555">
+                <jpa:column name="status" unique="false" nullable="true" insertable="true" updatable="true" table="t_book"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="typeId" id="_1510149226731556">
+                <jpa:column name="type_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="owner" id="_1510149226731557">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="owner" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226731558">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226731559">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226731560">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226731561">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226731562">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_book"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="bookShelfId" id="_1510149226731563">
+                <jpa:column name="book_shelf_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_book" length="22"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226731551">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_book" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_book"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TBookAndTypePK" abs="false" class="TBookAndType" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730452">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226733565">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="pid" id="_1510149226733566">
+                <jpa:column name="PID" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226733567">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="shelfId" id="_1510149226733568">
+                <jpa:column name="shelf_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226733569">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226733570">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226733571">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226733572">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_and_type"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226733564">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_book_and_type" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_book_and_type"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TTeacherPK" abs="false" class="TTeacher" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730453">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226733574">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="isDelete" id="_1510149226733575">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226733576">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="accountAddress" id="_1510149226733577">
+                <jpa:column name="account_address" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="code" id="_1510149226733578">
+                <jpa:column name="code" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="email" id="_1510149226733579">
+                <jpa:column name="email" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="entranceDate" id="_1510149226733580">
+                <jpa:column name="entrance_date" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="graduateSchool" id="_1510149226733581">
+                <jpa:column name="graduate_school" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="identityCardId" id="_1510149226733582">
+                <jpa:column name="identity_card_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226733583">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="nation" id="_1510149226733584">
+                <jpa:column name="nation" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="nativePlacenativePlace" id="_1510149226733585">
+                <jpa:column name="native_placenative_place" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="pictrue" id="_1510149226733586">
+                <jpa:column name="pictrue" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="politicalStatus" id="_1510149226733587">
+                <jpa:column name="political_status" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="sex" id="_1510149226733588">
+                <jpa:column name="sex" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="4"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="status" id="_1510149226733589">
+                <jpa:column name="status" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="telNum" id="_1510149226733590">
+                <jpa:column name="tel_num" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="degree" id="_1510149226733591">
+                <jpa:column name="degree" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="education" id="_1510149226733592">
+                <jpa:column name="education" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isExternal" id="_1510149226733593">
+                <jpa:column name="is_external" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isTeacher" id="_1510149226733594">
+                <jpa:column name="is_teacher" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="nowAddress" id="_1510149226733595">
+                <jpa:column name="now_address" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="jobTitlename" id="_1510149226733596">
+                <jpa:column name="jobTitle_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="tutuorType" id="_1510149226733597">
+                <jpa:column name="tutuor_type" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isTutor" id="_1510149226733598">
+                <jpa:column name="is_tutor" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="brief" id="_1510149226733599">
+                <jpa:column name="brief" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="6000"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="achivement" id="_1510149226733600">
+                <jpa:column name="achivement" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="7000"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="checkOrNot" id="_1510149226733601">
+                <jpa:column name="check_or_not" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226733602">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226733603">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="dutyName" id="_1510149226733604">
+                <jpa:column name="duty_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_teacher" length="22"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226733573">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="t_teacher" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_teacher"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TUserPK" abs="false" class="TUser" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730454">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226733606">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="authority" id="_1510149226733607">
+                <jpa:column name="authority" unique="false" nullable="true" insertable="true" updatable="true" table="t_user"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="bgPicture" id="_1510149226733608">
+                <jpa:column name="bg_picture" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="email" id="_1510149226733609">
+                <jpa:column name="email" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="headSculpture" id="_1510149226733610">
+                <jpa:column name="head_sculpture" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="levelId" id="_1510149226733611">
+                <jpa:column name="level_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="pwd" id="_1510149226733612">
+                <jpa:column name="pwd" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="8"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="qqNumber" id="_1510149226733613">
+                <jpa:column name="qq_number" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="tel" id="_1510149226733614">
+                <jpa:column name="tel" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="11"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226733615">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="wechatNumber" id="_1510149226733616">
+                <jpa:column name="wechat_number" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226733617">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_user"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226733618">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_user"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226733619">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_user" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="short" v="true" xvt="" name="isDelete" id="_1510149226735620">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="is_delete" unique="false" nullable="false" insertable="true" updatable="true" table="t_user"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" v="true" xvt="" name="onLine" id="_151062021083139">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226733605">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_user" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="TUser.findByOnLine">
+            <jpa:query>Select t from TUser t where t.onLine=:onLine</jpa:query>
+        </jpa:nq>
+        <jpa:table name="t_user"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TReadingroomPK" abs="false" class="TReadingroom" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730455">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="areaId" id="_1510149226736622">
+                <jpa:column name="area_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226736623">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Float" v="true" name="place" id="_1510149226736624">
+                <jpa:column name="place" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom" precision="8" scale="0"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226736625">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226736626">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226736627">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226736628">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226736629">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_readingroom"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226736621">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_readingroom" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_readingroom"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CoursePK" abs="false" class="Course" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730456">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="courseName" id="_1510149226736631">
+                <jpa:column name="courseName" unique="false" nullable="true" insertable="true" updatable="true" table="course" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1510149226730466" connected-attribute-id="_1510149226737748" v="true" name="coursequestiontypeCollection" id="_1510149226736632"/>
+            <jpa:id attribute-type="Integer" v="true" name="courseID" id="_1510149226736630">
+                <jpa:column name="courseID" unique="false" nullable="false" insertable="true" updatable="true" table="course"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="course"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TBookShelfPK" abs="false" class="TBookShelf" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730457">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="place" id="_1510149226736634">
+                <jpa:column name="place" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226736635">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226736636">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="roomId" id="_1510149226736637">
+                <jpa:column name="room_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226736638">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226736639">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226736640">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_shelf"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226736633">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_book_shelf" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_book_shelf"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TWarehusePK" abs="false" class="TWarehuse" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730458">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="author" id="_1510149226736642">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="author" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="isbn" id="_1510149226736643">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="shelfId" id="_1510149226736644">
+                <jpa:column name="shelf_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="origin" id="_1510149226736645">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="origin" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" xvt="" name="useCount" id="_1510149226736646">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="use_count" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" xvt="" name="wareCount" id="_1510149226736647">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="ware_count" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="remark" id="_1510149226736648">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="operator" id="_1510149226736649">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226736650">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226736651">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226736652">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_warehuse"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226736641">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_warehuse" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_warehuse"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TCollectionPK" abs="false" class="TCollection" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730460">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226736671">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226736672">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226736673">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226736674">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226736675">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226736676">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226736677">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_collection" length="22"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226736670">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_collection" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_collection"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TStudentPK" abs="false" class="TStudent" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730461">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737679">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737680">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226737681">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="accountAddress" id="_1510149226737682">
+                <jpa:column name="account_address" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="code" id="_1510149226737683">
+                <jpa:column name="code" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="email" id="_1510149226737684">
+                <jpa:column name="email" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="entranceDate" id="_1510149226737685">
+                <jpa:temporal>DATE</jpa:temporal>
+                <jpa:column name="entrance_date" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="identityCardId" id="_1510149226737686">
+                <jpa:column name="identity_card_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226737687">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="nation" id="_1510149226737688">
+                <jpa:column name="nation" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="nativePlacenativePlace" id="_1510149226737689">
+                <jpa:column name="native_placenative_place" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="pictrue" id="_1510149226737690">
+                <jpa:column name="pictrue" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="politicalStatus" id="_1510149226737691">
+                <jpa:column name="political_status" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="sex" id="_1510149226737692">
+                <jpa:column name="sex" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="4"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="status" id="_1510149226737693">
+                <jpa:column name="status" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="telNum" id="_1510149226737694">
+                <jpa:column name="tel_num" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="graduatedSchool" id="_1510149226737695">
+                <jpa:column name="graduated_school" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isGraduate" id="_1510149226737696">
+                <jpa:column name="is_graduate" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="noGraduateReason" id="_1510149226737697">
+                <jpa:column name="no_graduate_reason" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="originalPlace" id="_1510149226737698">
+                <jpa:column name="original_place" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="usedName" id="_1510149226737699">
+                <jpa:column name="used_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="classesName" id="_1510149226737700">
+                <jpa:column name="classes_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="professionName" id="_1510149226737701">
+                <jpa:column name="profession_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isRegistry" id="_1510149226737702">
+                <jpa:column name="is_registry" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="payNumber" id="_1510149226737703">
+                <jpa:column name="pay_number" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="roomId" id="_1510149226737704">
+                <jpa:column name="room_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_student" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737705">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737706">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="age" id="_1510149226737707">
+                <jpa:column name="age" unique="false" nullable="true" insertable="true" updatable="true" table="t_student"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" xvt="" name="id" id="_1510149226737678">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="t_student" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_student">
+            <jpa:unique-constraint>
+                <jpa:column-name>code</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TReservationPK" abs="false" class="TReservation" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730462">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226737709">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737710">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isannounce" id="_1510149226737711">
+                <jpa:column name="Is_announce" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226737712">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="status" id="_1510149226737713">
+                <jpa:column name="status" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226737714">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737715">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737716">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737717">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_reservation"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737708">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_reservation" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_reservation"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TMessageTemplatePK" abs="false" class="TMessageTemplate" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730463">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_1510149226737719">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_template" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="messageTypeId" id="_1510149226737720">
+                <jpa:column name="message_type_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_template" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737721">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_template" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737722">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_template"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737723">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_template"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737724">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_template"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737718">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_message_template" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_message_template"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TLevelPK" abs="false" class="TLevel" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730464">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="count" id="_1510149226737726">
+                <jpa:column name="count" unique="false" nullable="true" insertable="true" updatable="true" table="t_level"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="duration" id="_1510149226737727">
+                <jpa:column name="duration" unique="false" nullable="true" insertable="true" updatable="true" table="t_level"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="integralId" id="_1510149226737728">
+                <jpa:column name="integral_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_level" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226737729">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_level" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="times" id="_1510149226737730">
+                <jpa:column name="times" unique="false" nullable="true" insertable="true" updatable="true" table="t_level"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737731">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_level" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737732">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_level"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737733">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_level"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737734">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_level"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737725">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_level" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_level"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TNewbookPK" abs="false" class="TNewbook" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730465">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="startTime" id="_1510149226737736">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="start_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="endTime" id="_1510149226737737">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="end_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226737738">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737739">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="reason" id="_1510149226737740">
+                <jpa:column name="reason" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226737741">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737742">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737743">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737744">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_newbook"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737735">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_newbook" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_newbook"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CoursequestiontypePK" abs="false" class="Coursequestiontype" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730466">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="operatorId" id="_1510149226737746">
+                <jpa:column name="operatorId" unique="false" nullable="true" insertable="true" updatable="true" table="coursequestiontype"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="versionStartTime" id="_1510149226737747">
+                <jpa:column name="versionStartTime" unique="false" nullable="true" insertable="true" updatable="true" table="coursequestiontype" length="255"/>
+            </jpa:basic>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1510149226730456" connected-attribute-id="_1510149226736632" v="true" name="courseid" id="_1510149226737748">
+                <jpa:join-column name="COURSEID" rc="COURSEID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:many-to-one primaryKey="false" connected-entity-id="_1510149226730468" connected-attribute-id="_1510149226737760" v="true" name="questiontypeid" id="_1510149226737749">
+                <jpa:join-column name="QUESTIONTYPEID" rc="QUESTIONTYPEID" unique="false" nullable="true" insertable="true" updatable="true"/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Integer" v="true" name="id" id="_1510149226737745">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="coursequestiontype"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="coursequestiontype"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TMessageTypePK" abs="false" class="TMessageType" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730467">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226737751">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="pid" id="_1510149226737752">
+                <jpa:column name="PID" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226737753">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737754">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737755">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737756">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737757">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_type"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737750">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_message_type" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_message_type"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="QuestiontypePK" abs="false" class="Questiontype" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730468">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="questionTypeName" id="_1510149226737759">
+                <jpa:column name="questionTypeName" unique="false" nullable="true" insertable="true" updatable="true" table="questiontype" length="255"/>
+            </jpa:basic>
+            <jpa:one-to-many own="false" collection-type="java.util.List" connected-entity-id="_1510149226730466" connected-attribute-id="_1510149226737749" v="true" name="coursequestiontypeCollection" id="_1510149226737760"/>
+            <jpa:id attribute-type="Integer" v="true" name="questionTypeId" id="_1510149226737758">
+                <jpa:column name="questionTypeId" unique="false" nullable="false" insertable="true" updatable="true" table="questiontype"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="questiontype"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TMessageRecordPK" abs="false" class="TMessageRecord" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730469">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226737762">
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="sendTime" id="_1510149226737763">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="send_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="sender" id="_1510149226737764">
+                <jpa:column name="sender" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="messageTemplateId" id="_1510149226737765">
+                <jpa:column name="message_template_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isdelete" id="_1510149226737766">
+                <jpa:column name="Is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737767">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737768">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737769">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_message_record" length="22"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737761">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_message_record" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_message_record"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TOffShelfPK" abs="false" class="TOffShelf" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730470">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="bookId" id="_1510149226737771">
+                <jpa:column name="book_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="trace" id="_1510149226737772">
+                <jpa:column name="trace" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226737773">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226737774">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226737775">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226737776">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226737777">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_off_shelf"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226737770">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_off_shelf" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_off_shelf"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TBookBasicPK" abs="false" class="TBookBasic" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730471">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="summary" id="_1510149226738779">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="summary" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="65535"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="author" id="_1510149226738780">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="author" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="bid" id="_1510149226738781">
+                <jpa:column name="bid" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" precision="10" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="content" id="_1510149226738782">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:bv>
+                    <jpa:nn/>
+                </jpa:bv>
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="65535"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226738783">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="languagea" id="_1510149226738784">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="languagea" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="name" id="_1510149226738785">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="80"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="picture" id="_1510149226738786">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="picture" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" xvt="" name="primCost" id="_1510149226738787">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="prim_cost" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" precision="10" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="publishPlace" id="_1510149226738788">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="publish_place" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="publishTime" id="_1510149226738789">
+                <jpa:column name="publish_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="rank" id="_1510149226738790">
+                <jpa:column name="rank" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="remark" id="_1510149226738791">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="sellPrice" id="_1510149226738792">
+                <jpa:column name="sell_price" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" precision="10" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" xvt="" name="totalPage" id="_1510149226738793">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="total_page" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226738794">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226738795">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226738796">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226738797">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_book_basic"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226738778">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_book_basic" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_book_basic"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="SequencePK" abs="false" class="Sequence" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730472">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="java.math.BigInteger" v="true" name="seqCount" id="_1510149226738799">
+                <jpa:column name="SEQ_COUNT" unique="false" nullable="true" insertable="true" updatable="true" table="sequence"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="seqName" id="_1510149226738798">
+                <jpa:column name="SEQ_NAME" unique="false" nullable="false" insertable="true" updatable="true" table="sequence" length="50"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="sequence"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TSettingPK" abs="false" class="TSetting" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730473">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" xvt="" name="borrowingNumber" id="_1510149226738801">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="borrowing_number" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="reservationNumber" id="_1510149226738802">
+                <jpa:column name="reservation_number" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="borrowingTime" id="_1510149226738803">
+                <jpa:column name="borrowing_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="reservationCount" id="_1510149226738804">
+                <jpa:column name="reservation_count" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226738805">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226738806">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting" length="256"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226738807">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226738808">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226738809">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_setting"/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="renewNumber" id="_151020990574639">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226738800">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="t_setting" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="TSetting.findByRenewNumber">
+            <jpa:query>Select t from TSetting t where t.renewNumber=:renewNumber</jpa:query>
+        </jpa:nq>
+        <jpa:table name="t_setting"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TDonatePK" abs="false" class="TDonate" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730474">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="userId" id="_1510149226738811">
+                <jpa:column name="user_Id" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="auditReason" id="_1510149226738812">
+                <jpa:column name="audit_reason" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="auditStatus" id="_1510149226738813">
+                <jpa:column name="audit_status" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="autor" id="_1510149226738814">
+                <jpa:column name="autor" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="donCount" id="_1510149226738815">
+                <jpa:column name="don_count" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="2147483647"/>
+                <jpa:lob/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="donMoney" id="_1510149226738816">
+                <jpa:column name="don_money" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" precision="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="donType" id="_1510149226738817">
+                <jpa:column name="don_type" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="donateName" id="_1510149226738818">
+                <jpa:column name="donate_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="donaterType" id="_1510149226738819">
+                <jpa:column name="donater_type" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="10"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="isbn" id="_1510149226738820">
+                <jpa:column name="isbn" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="13"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="name" id="_1510149226738821">
+                <jpa:column name="name" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="40"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226738822">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="publishTime" id="_1510149226738823">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="publish_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_1510149226738824">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="short" v="true" name="isDelete" id="_1510149226738825">
+                <jpa:column name="is_delete" unique="false" nullable="false" insertable="true" updatable="true" table="t_donate"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226738826">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226738827">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_donate"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226738810">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_donate" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_donate"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="AuthorityPK" abs="false" class="Authority" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730475">
+        <jpa:attributes>
+            <jpa:many-to-many own="true" collection-type="java.util.List" connected-entity-id="_1510149226730477" connected-attribute-id="_1510149226738852" v="true" name="accountCollection" id="_1510149226738829">
+                <jpa:join-table name="user_authority">
+                    <jpa:join-column name="AUTHORITY_NAME" rc="NAME" unique="false" nullable="true" insertable="true" updatable="true"/>
+                    <jpa:inverse-join-column name="USER_ID" rc="ID" unique="false" nullable="true" insertable="true" updatable="true"/>
+                </jpa:join-table>
+            </jpa:many-to-many>
+            <jpa:id attribute-type="String" v="true" name="name" id="_1510149226738828">
+                <jpa:column name="name" unique="false" nullable="false" insertable="true" updatable="true" table="authority" length="50"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="authority"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TDictionaryTypePK" abs="false" class="TDictionaryType" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730476">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="content" id="_1510149226738831">
+                <jpa:column name="content" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary_type" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="typeName" id="_1510149226738832">
+                <jpa:column name="type_name" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary_type" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_1510149226738833">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary_type" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_1510149226738834">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary_type"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_1510149226738835">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary_type"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="isDelete" id="_1510149226738836">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_dictionary_type"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_1510149226738830">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_dictionary_type" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_dictionary_type"/>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="AccountPK" abs="false" class="Account" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_1510149226730477">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="createdBy" id="_1510149226738838">
+                <jpa:column name="created_by" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="java.util.Date" v="true" name="createdDate" id="_1510149226738839">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="created_date" unique="false" nullable="false" insertable="true" updatable="true" table="account"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="lastModifiedBy" id="_1510149226738840">
+                <jpa:column name="last_modified_by" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="lastModifiedDate" id="_1510149226738841">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="last_modified_date" unique="false" nullable="true" insertable="true" updatable="true" table="account"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="boolean" v="true" name="activated" id="_1510149226738842">
+                <jpa:column name="activated" unique="false" nullable="false" insertable="true" updatable="true" table="account"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="activationKey" id="_1510149226738843">
+                <jpa:column name="activation_key" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="20"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="email" id="_1510149226738844">
+                <jpa:column name="email" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="100"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="firstName" id="_1510149226738845">
+                <jpa:column name="first_name" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="langKey" id="_1510149226738846">
+                <jpa:column name="lang_key" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="5"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="lastName" id="_1510149226738847">
+                <jpa:column name="last_name" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" name="login" id="_1510149226738848">
+                <jpa:column name="login" unique="false" nullable="false" insertable="true" updatable="true" table="account" length="50"/>
+            </jpa:basic>
+            <jpa:basic optional="false" attribute-type="String" v="true" name="passwordHash" id="_1510149226738849">
+                <jpa:column name="password_hash" unique="false" nullable="false" insertable="true" updatable="true" table="account" length="32"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="resetDate" id="_1510149226738850">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="reset_date" unique="false" nullable="true" insertable="true" updatable="true" table="account"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="resetKey" id="_1510149226738851">
+                <jpa:column name="reset_key" unique="false" nullable="true" insertable="true" updatable="true" table="account" length="20"/>
+            </jpa:basic>
+            <jpa:many-to-many own="false" collection-type="java.util.List" connected-entity-id="_1510149226730475" connected-attribute-id="_1510149226738829" v="true" name="authorityCollection" id="_1510149226738852"/>
+            <jpa:id attribute-type="Long" v="true" name="id" id="_1510149226738837">
+                <jpa:column name="id" unique="false" nullable="false" insertable="true" updatable="true" table="account"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="account">
+            <jpa:unique-constraint>
+                <jpa:column-name>email</jpa:column-name>
+            </jpa:unique-constraint>
+        </jpa:table>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TBorrowingPK" abs="false" class="TBorrowing" v="true" xre="false" m="false" rootElement="_1510149226728442" id="_151028314607877">
+        <jpa:attributes>
+            <jpa:basic optional="true" attribute-type="String" v="true" xvt="" name="userId" id="_151028314607879">
+                <jpa:xwm nil="false" req="false"/>
+                <jpa:xm nil="false" req="false"/>
+                <jpa:column name="user_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="bookId" id="_151028314607880">
+                <jpa:column name="book_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Boolean" v="true" name="isDelete" id="_151028314607881">
+                <jpa:column name="is_delete" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="borrowTime" id="_151028314607882">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="borrow_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="endDate" id="_151028314607883">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="end_date" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="compensation" id="_151028314607884">
+                <jpa:column name="compensation" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" precision="2" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="damageId" id="_151028314607885">
+                <jpa:column name="damage_id" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Boolean" v="true" name="isOverdue" id="_151028314607886">
+                <jpa:column name="is_overdue" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Double" v="true" name="overdueMoney" id="_151028314607887">
+                <jpa:column name="overdue_money" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" precision="2" scale="2"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="realDate" id="_151028314607888">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="real_date" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Short" v="true" name="renew" id="_151028314607889">
+                <jpa:column name="renew" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="remark" id="_151028314607890">
+                <jpa:column name="remark" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" length="255"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="String" v="true" name="operator" id="_151028314607891">
+                <jpa:column name="operator" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing" length="22"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="createTime" id="_151028314607892">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="create_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="java.util.Date" v="true" name="updateTime" id="_151028314607893">
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+                <jpa:column name="update_time" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:basic optional="true" attribute-type="Integer" v="true" name="borrowStatus" id="_151028314607894">
+                <jpa:column name="borrow_status" unique="false" nullable="true" insertable="true" updatable="true" table="t_borrowing"/>
+            </jpa:basic>
+            <jpa:id attribute-type="String" v="true" name="id" id="_151028314607878">
+                <jpa:column name="ID" unique="false" nullable="false" insertable="true" updatable="true" table="t_borrowing" length="22"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:table name="t_borrowing"/>
+    </jpa:entity>
+    <jpa:snp loc="BEFORE_PACKAGE" e="true">/**
+ * This file was generated by the Jeddict
+ */</jpa:snp>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_1510149226872853">
+            <i ref="_1510149226730470" x="1577" y="32"/>
+            <i ref="_1510149226730471" x="3852" y="32"/>
+            <i ref="_1510149226730449" x="6929" y="32"/>
+            <i ref="_1510149226730447" x="3247" y="32"/>
+            <i ref="_1510149226730469" x="5779" y="32"/>
+            <i ref="_1510149226730448" x="5523" y="32"/>
+            <i ref="_1510149226730445" x="4673" y="32"/>
+            <i ref="_1510149226730467" x="1275" y="32"/>
+            <i ref="_1510149226730446" x="8034" y="32"/>
+            <i ref="_1510149226730468" x="574" y="818"/>
+            <i ref="_1510149226730465" x="8626" y="32"/>
+            <i ref="_1510149226730466" x="308" y="32"/>
+            <i ref="_1510149226730463" x="8298" y="32"/>
+            <i ref="_1510149226730464" x="7195" y="32"/>
+            <i ref="_1510149226730461" x="9193" y="32"/>
+            <i ref="_1510149226730462" x="8902" y="32"/>
+            <i ref="_1510149226730460" x="6377" y="32"/>
+            <i ref="_151028314607877" x="6090" y="50"/>
+            <i ref="_1510149226728444" x="2404" y="32"/>
+            <i ref="_1510149226728443" x="2676" y="32"/>
+            <i ref="_1510149226730458" x="7451" y="32"/>
+            <i ref="_1510149226730456" x="32" y="818"/>
+            <i ref="_1510149226730457" x="4136" y="32"/>
+            <i ref="_1510149226730454" x="4417" y="32"/>
+            <i ref="_1510149226730476" x="4953" y="32"/>
+            <i ref="_1510149226730455" x="1846" y="32"/>
+            <i ref="_1510149226730477" x="1061" y="818"/>
+            <i ref="_1510149226730452" x="7733" y="32"/>
+            <i ref="_1510149226730474" x="5260" y="32"/>
+            <i ref="_1510149226730453" x="3556" y="32"/>
+            <i ref="_1510149226730475" x="850" y="32"/>
+            <i ref="_1510149226730450" x="2145" y="32"/>
+            <i ref="_1510149226730472" x="6656" y="32"/>
+            <i ref="_1510149226730451" x="2991" y="32"/>
+            <i ref="_1510149226730473" x="8671" y="345"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>

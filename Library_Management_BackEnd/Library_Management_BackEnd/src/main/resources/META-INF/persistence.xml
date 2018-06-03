@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="DEFAULT_PU" transaction-type="JTA">
+    <!--<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>-->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>java:jboss/datasources/CloudMysqlDS</jta-data-source>
+    <class>com.dmsdbj.library.entity.TAreaDistribution</class>
+    <class>com.dmsdbj.library.entity.TRenewal</class>
+    <class>com.dmsdbj.library.entity.TDictionary</class>
+    <class>com.dmsdbj.library.entity.TReview</class>
+    <class>com.dmsdbj.library.entity.TAnnouncement</class>
+    <class>com.dmsdbj.library.entity.TNotes</class>
+    <class>com.dmsdbj.library.entity.TOpinion</class>
+    <class>com.dmsdbj.library.entity.TFollow</class>
+    <class>com.dmsdbj.library.entity.TBook</class>
+    <class>com.dmsdbj.library.entity.TBookAndType</class>
+    <class>com.dmsdbj.library.entity.TUser</class>
+    <class>com.dmsdbj.library.entity.TReadingroom</class>
+    <class>com.dmsdbj.library.entity.TBookShelf</class>
+    <class>com.dmsdbj.library.entity.TWarehuse</class>
+    <class>com.dmsdbj.library.entity.TBorrowing</class>
+    <class>com.dmsdbj.library.entity.TCollection</class>
+    <class>com.dmsdbj.library.entity.TReservation</class>
+    <class>com.dmsdbj.library.entity.TMessageTemplate</class>
+    <class>com.dmsdbj.library.entity.TLevel</class>
+    <class>com.dmsdbj.library.entity.TNewbook</class>
+    <class>com.dmsdbj.library.entity.TMessageType</class>
+    <class>com.dmsdbj.library.entity.TMessageRecord</class>
+    <class>com.dmsdbj.library.entity.TOffShelf</class>
+    <class>com.dmsdbj.library.entity.TBookBasic</class>
+    <class>com.dmsdbj.library.entity.TDonate</class>
+    <class>com.dmsdbj.library.entity.User</class>
+    <class>com.dmsdbj.library.entity.Authority</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.sql-load-script-source" value="META-INF/sql/insert.sql"/>
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>

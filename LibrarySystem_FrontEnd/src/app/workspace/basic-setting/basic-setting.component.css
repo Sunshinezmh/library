@@ -1,0 +1,20 @@
+.form-control{
+    width: 300px;
+    
+}
+.cdd{
+    
+    color:white; 
+    font:24;
+    background-color:dodgerblue;
+    margin-right: 50px;
+    
+    
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #B1CCF3; /* green */
+  }
+
+.ng-invalid:not(form)  {
+border-left: 5px solid #a94442; /* red */
+}

@@ -1,0 +1,39 @@
+.home-title{
+    font-size: 25px;
+    font-family: 楷体;
+    margin-top:15px;
+}
+.left_icon{
+    margin-top:25px;
+}
+hr{
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+img{
+    height:60px;
+    width:60px;
+    margin-left:65%;
+    margin-bottom: 5px;
+}
+
+.nav_top{
+    height:50px;
+        width:100%;
+    margin:0px;
+}
+
+.content{
+padding-top:30%;  
+
+}
+
+.coustom_input{
+    margin-bottom: 20px;
+}
+
+
+
+
+

@@ -1,0 +1,28 @@
+{
+    "library": {
+        "TOffShelf" : {
+            "home": {
+                "title": "T Off Shelves",
+                "createLabel": "Create a new T Off Shelf",
+                "createOrEditLabel": "Create or edit a T Off Shelf",
+                "search": "Search for T Off Shelf"
+            },
+            "created": "A new T Off Shelf is created with identifier {{ param }}",
+            "updated": "A T Off Shelf is updated with identifier {{ param }}",
+            "deleted": "A T Off Shelf is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Off Shelf {{ id }}?"
+            },
+            "detail": {
+                "title": "T Off Shelf"
+            },
+            "id": "Id",
+            "bookId": "Book Id",
+            "trace": "Trace",
+            "operateTime": "Operate Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

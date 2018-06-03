@@ -1,0 +1,154 @@
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+div{
+    font-family: 楷体;
+}
+    
+.header{
+    text-align: center;
+    line-height: 50px;
+    font-family: 楷体;
+}
+.header span{
+    font-size: 25px;
+}
+.book{
+    margin-bottom: 5px;
+}
+.book img {
+    height:120px;
+    width:90px;
+    
+}
+.back_icon{
+    float:left;
+}
+hr{
+    margin:0px;
+    width:100%;
+}
+
+.left_icon{
+    margin-left:20px
+}
+.right_icon{
+    float:right;
+    margin-right:20px
+}
+
+.container{
+    margin-left:20px;
+}
+
+.content{
+       padding-top:60px;
+    max-height:89%;
+    min-height: 80%;
+    margin-bottom: 10px;
+    overflow-y:auto;
+}
+
+
+.book_info >p{
+    font-family: 楷体;
+    font-size: 20px;
+    
+}
+.info{
+    text-indent: 25px;
+}
+.count{
+    background:#FFFFFF;
+    border:0;
+    font-size: 20px;
+    width: 50%;
+}
+.Borrow{
+    border:0;
+    display: block;
+    color: #222222;
+    font-size: 14px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+    line-height: 22px;
+    BACKGROUND-COLOR: transparent;
+    text-align:center;
+    /* position: relative; */
+    /* margin-right: auto;
+    margin-left:auto; */
+    /* left:10%; */
+
+}
+input{
+    width:96%;
+}
+.nav {
+    background:#F9F9F9;
+    padding: 0px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+.nav ul {
+    height: 60px;
+    margin:0px;
+    padding:0px;
+}
+.nav ul li {
+    float: left;
+    width: 50%;
+    text-align: center;
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+.nav ul li span {
+    display: block;
+    color: #222222;
+    font-size: 14px;
+    font-family: "微软雅黑";
+    line-height: 22px;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.nav img{
+    width:20%;
+    height:35px;
+}
+
+
+.test-textarea {
+     /* height:1050px;
+     width: 350px; 
+     resize: none;
+     overflow:auto;  */
+     width: 400px;
+     min-height: 26px;
+     line-height: 20px;
+     _height: 30px;  
+     margin-left: auto;
+     margin-right: auto;
+     padding: 3px;
+     outline: 0;
+   
+     font-size: 12px;
+     word-wrap: break-word;
+     overflow-x: hidden;
+     overflow-y: auto;
+     -webkit-user-modify: read-write-plaintext-only;
+     border-radius: 4px; 
+     word-break:keep-all ;
+
+}
+pre { border:0px;}
+
+.ui-growl-item{
+    /* margin-top: 2em; */
+}
+

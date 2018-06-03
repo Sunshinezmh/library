@@ -1,0 +1,36 @@
+<div [@fadeIn]>
+    <div style="text-align:center;color:red;font-size:13;">提示：请使用扫描机！</div>
+    <div class="books">
+        <div class="book_name">图书信息</div>
+        <div class="book_img"><img src="{{bookURL}}" /></div>
+        <p>索书号: <input #SearchNum id="searchNum" type="text" name="1" (change)="getBookInfo(SearchNum)" onkeyup="value=value.replace(/[\W]/g,'')" ></p>
+        <p>书名：{{bookName}}</p>
+        <p>作者：{{author}} </p>
+        <p>版次：{{version}}</p>
+        <p>馆藏剩余：{{bookcount}}本</p>
+    </div>
+    <div class="books">
+        <div class="book_name">学生信息</div>
+        <div class="book_img"><img src="{{studentURL}}" /></div>
+        <p >学号：<input #studentCode id="studentCode"  type="text" name="1"  (change)="getStudentInfo(studentCode)" onkeyup="value=value.replace(/[\W]/g,'')"></p>
+        <p>姓名：{{name}}</p>
+        <p>性别：{{sex}}</p>
+        <p>班级:    {{class}}</p>
+        <p>已借阅：{{count}}本</p>
+    </div>
+    <div>
+        <button style="margin-left:15%;width:12%" class="btn btn-primary" (click)="returnBook(SearchNum,studentCode)">还书</button>
+        <button style="margin-left:42%;width:12%" class="btn btn-primary" (click)="borrowBook(SearchNum,studentCode)">借书</button>
+    </div>
+</div>
+
+<p-dialog header="提示" [(visible)]="displayP" modal="modal" width="400" [responsive]="true">
+    <p style="text-align:center">
+        {{message}}
+    </p>
+    <p-footer>
+        <button class="btn btn-default" type="button" pButton (click)="displayP=false">
+            确定
+        </button>
+    </p-footer>
+ </p-dialog>

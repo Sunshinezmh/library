@@ -1,0 +1,57 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+  <div class="container ">
+    <div class="header">
+      <div class="back_icon">
+        <i class="fa fa-chevron-left left_icon" (click)="previousPage()"></i>
+      </div>
+      <span class="form-signin-heading reservation_info">书籍借阅详情</span>
+      <div class="right_icon">
+      </div>
+    </div>
+  </div>
+</nav>
+<hr>
+
+<div class="content">
+
+  <div *ngIf="borrowDetailW!=null || borrowDetailW.length>0" class="tab-content " id="myTabContent">
+    <div class="header_input">
+      <input type="text" class="form-control " [(ngModel)]="condition" (keyup)="query()" placeholder="书名" />
+    </div>
+    <div class="home-noguess" *ngIf="borrowDetailW.length==0">
+      <p style="font-size:16px;margin-top:100px;text-align:center;color:#AAAAAA;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">暂无借阅记录</p>
+    </div>
+    <div class="line-wrapper" *ngFor="let borrowdetail of borrowDetailW,let i=index" #linewrapper>
+      <div class="line-scroll-wrapper" #scorewrapper>
+        <div class="line-normal-wrapper" #nomalwrapper>
+          <img class="img" src={{borrowdetail.picture?borrowdetail.picture:backPicture}} (click)="keyup(i)" />
+          <div class="book_info" (click)="keyup(i)">
+            <div class="book_name">{{borrowdetail.bookName}}</div>
+            <div class="book_location">书籍位置: {{borrowdetail.location}}</div>
+            <div class="book_author">借阅人: {{borrowdetail.studentName}}</div>
+            <div class="book_date">借书日期: {{convertDate(borrowdetail.borrowTime)}}</div>
+          </div>
+            </div>
+      </div>
+    </div>
+
+
+    <div *ngIf="noBorrowReservations!=null && noBorrowReservations.length>0">
+      <p>暂无记录</p>
+    </div>
+    <div class="line-wrapper" *ngFor="let reservation of noBorrowReservations" #linewrapper>
+      <div class="line-scroll-wrapper" #scorewrapper>
+        <div class="line-normal-wrapper" #nomalwrapper>
+          <img class="img" src={{borrowdetail.picture?borrowdetail.picture:backPicture}}/>
+          <div class="book_info">
+            <div class="book_name">{{borrowdetail.bookName}}</div>
+            <div class="book_location">书籍位置: {{borrowdetail.location}}</div>
+            <div class="book_author">借阅人: {{borrowdetail.studentName}}</div>
+            <div class="book_date">借书日期:{{convertDate(borrowdetail.borrowTime)}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p-growl [(value)]="msgs"></p-growl>

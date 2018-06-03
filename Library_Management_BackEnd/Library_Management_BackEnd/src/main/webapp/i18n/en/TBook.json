@@ -1,0 +1,31 @@
+{
+    "library": {
+        "TBook" : {
+            "home": {
+                "title": "T Books",
+                "createLabel": "Create a new T Book",
+                "createOrEditLabel": "Create or edit a T Book",
+                "search": "Search for T Book"
+            },
+            "created": "A new T Book is created with identifier {{ param }}",
+            "updated": "A T Book is updated with identifier {{ param }}",
+            "deleted": "A T Book is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Book {{ id }}?"
+            },
+            "detail": {
+                "title": "T Book"
+            },
+            "id": "Id",
+            "searchNum": "Search Num",
+            "origin": "Origin",
+            "typeID": "Type ID",
+            "basicID": "Basic ID",
+            "status": "Status",
+            "operterTime": "Operter Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

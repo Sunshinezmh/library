@@ -1,0 +1,41 @@
+{
+    "library": {
+        "TBookBasic" : {
+            "home": {
+                "title": "T Book Basics",
+                "createLabel": "Create a new T Book Basic",
+                "createOrEditLabel": "Create or edit a T Book Basic",
+                "search": "Search for T Book Basic"
+            },
+            "created": "A new T Book Basic is created with identifier {{ param }}",
+            "updated": "A T Book Basic is updated with identifier {{ param }}",
+            "deleted": "A T Book Basic is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Book Basic {{ id }}?"
+            },
+            "detail": {
+                "title": "T Book Basic"
+            },
+            "id": "Id",
+            "bookId": "Book Id",
+            "name": "Name",
+            "picture": "Picture",
+            "author": "Author",
+            "publishPlace": "Publish Place",
+            "rank": "Rank",
+            "abstract1": "Abstract1",
+            "isbn": "Isbn",
+            "language": "Language",
+            "totalPage": "Total Page",
+            "content": "Content",
+            "primCost": "Prim Cost",
+            "sellPrice": "Sell Price",
+            "bid": "Bid",
+            "publishTime": "Publish Time",
+            "operterTime": "Operter Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

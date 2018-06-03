@@ -1,0 +1,23 @@
+<div class="home-noguess" *ngIf="borrowDetailsalready.length==0">
+  <p style="font-size:16px;margin-top:100px;text-align:center;color:#AAAAAA;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">暂无已还内容哦</p>
+</div>
+<div style="clear:left" *ngFor="let borrow of borrowDetailsalready,let i = index">
+
+<div class="row" >
+ 
+  <img class="img image img_left" alt="书的封面" src="{{borrow.picture?borrow.picture:backPicture}}" (click)="keyup(i)" />
+
+  <div class="col-xs-8 book_right" (click)="keyup(i)">
+       <div class="book_name" style="text-align:center"> {{borrow.name}}</div>
+       <div  class="return_date">应还日期:{{convertDate(borrow.borrowTime)}} </div>
+  <div class="return_date">还书日期:{{convertDate(borrow.realDate)}} </div>
+  </div>
+</div>
+
+<div class="foot_div"></div>
+
+</div>
+  
+<div *ngIf=" page < totalPages"  class="maxbook">
+  <span  (click)="manyBook()">更多。。。</span>
+</div>

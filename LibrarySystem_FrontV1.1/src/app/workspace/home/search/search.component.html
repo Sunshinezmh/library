@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+    <div class="container ">
+        <div class="header">
+            <div class="back_icon">
+                <i class="fa fa-chevron-left left_icon" (click)="routeToHome()"></i>
+            </div>
+            <div class="header_input">
+                <input type="text" class="form-control " [(ngModel)]="condition" (change)="findResult()" placeholder="书名/作者名" id="find" />
+            </div>
+            <div class="right_icon">
+                <i class="fa fa-search " aria-hidden="true" (click)="findResult()"></i>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="div-inline" id="1" (click)="select(1)">全部</div>
+    <div class="div-inline" id="2" (click)="select(2)">可借阅</div>
+    <div class="div-inline" id="3" (click)="select(3)">不可借阅</div>
+</nav>
+
+<div class=" content">
+    <div class="hot_content">
+        <p>热门搜索</p>
+        <label *ngFor="let book of result,let i = index" class="hot_search" (click)="selectCondition(book)">{{book}}</label>
+    </div>
+</div>
+<br>
+<div class=" history">
+    <div class="searchhistory">
+        <p style="width:85%;float:left">搜索历史</p>
+        <i type="reset" class="fa fa-trash-o" style="border:0;background:#00000000;padding-right:5%;font-size:24px"  aria-hidden="true" (click)="deletehistory()"></i>
+    </div>
+    <br>
+    <div>
+        <label  *ngFor="let bookname of history,let i = index" class="history_search" (click)="selectCondition(bookname)">{{bookname}}</label>
+    </div>
+</div>
+
+

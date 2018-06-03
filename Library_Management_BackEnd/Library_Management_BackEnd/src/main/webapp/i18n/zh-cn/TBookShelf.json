@@ -1,0 +1,28 @@
+{
+    "library": {
+        "TBookShelf" : {
+            "home": {
+                "title": "T Book Shelves",
+                "createLabel": "Create a new T Book Shelf",
+                "createOrEditLabel": "Create or edit a T Book Shelf",
+                "search": "Search for T Book Shelf"
+            },
+            "created": "A new T Book Shelf is created with identifier {{ param }}",
+            "updated": "A T Book Shelf is updated with identifier {{ param }}",
+            "deleted": "A T Book Shelf is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Book Shelf {{ id }}?"
+            },
+            "detail": {
+                "title": "T Book Shelf"
+            },
+            "id": "Id",
+            "place": "Place",
+            "roomId": "Room Id",
+            "operateTime": "Operate Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

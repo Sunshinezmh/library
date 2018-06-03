@@ -1,0 +1,128 @@
+
+.header{
+    text-align: center;
+    line-height: 50px;
+    /*font-size: 25px;*/
+    font-family: 楷体;
+}
+.header span{
+    font-size: 25px;
+}
+img{
+    height:95px;
+    margin-top:10px;
+    width:20%;
+    float:left;
+}
+hr{
+    margin:0px;
+    width:100%;
+}
+.back_icon{
+    float:left;
+}
+.left_icon{
+    margin-left:20px
+}
+/* .right_icon{
+    float:right;
+    margin-right:20px
+} */
+.reservation_div{
+    text-align:center;
+    margin-top:15px;
+}
+.reservation_info{
+margin-left:auto;
+margin-right:auto;
+    
+}
+.cancel_reservation{
+   text-align: center;
+}
+.content{
+    /*margin-left:10%;*/
+    padding-top:15%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+
+.panel_content{
+    float:left;
+    width:100%;
+    
+}
+.book_info{
+    width:50%;
+    float:left;
+    margin-left:6px;
+    margin-top:5px;
+}
+
+.book_name{
+    padding-top: 10%;
+    font-size: 18px;
+    font-family: 楷体;
+    line-height: 100%;
+    text-align: left;
+    margin-left:1px;
+}
+
+.book_author{
+    line-height: 100%;
+    margin-top: 5px;
+    font-size: 14px;
+    font-family: 楷体;
+    margin-left:8px;
+}
+.book_date{
+    line-height: 100%;
+    margin-top: 5px;
+    font-size: 14px;
+    font-family: 楷体;
+    margin-left:10px;
+}
+.book_location{
+    line-height: 100%;
+    margin-top: 12px;
+    font-size: 14px;
+    font-family: 楷体;
+    margin-left:10px;
+}
+.header{
+    height:50px;
+}
+
+.search_icon{
+    height: 30px;
+    float: right;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+p{
+    font-size: 25px;
+    font-family: 楷体;
+}
+.header_input{
+    text-align: center;
+    /* float:left; */
+    width:80%;
+    margin-top:20px;
+    margin-left: 35px;
+}
+.right_icon{
+    margin-right: 15px;
+    margin-top:-25px;
+    float:right;    
+    width:10%;
+}
+
+* { margin: 0; padding: 0; }
+.line-wrapper { width: 97%; height: 120px; overflow: hidden; font-size: 28px;  margin-top:5px;margin-left:3%; border-bottom: 1px solid #aaa; }
+.line-scroll-wrapper { white-space: nowrap; height: 80px; clear: both; }
+
+.line-btn-delete button { width: 100%; height: 100%; background: #DE5145; border: none; font-size: 16px; font-family: 'Microsoft Yahei'; color: #fff; }
+
+.line-normal-wrapper { display: inline-block; line-height: 100px; float: left; width:100%;padding-top:5px;padding-bottom: 5px;  }

@@ -1,0 +1,36 @@
+<div class="content" #content>
+  <div class="home">
+    <hr>
+    <div style="text-align:center;">
+      <a href="#/search">
+        <span>
+          <img class="home-search" src={{imgSearchURL}}>
+        </span>
+      </a>
+    </div>
+  </div>
+  <div class="home-guess" style="font-family:楷体">猜你喜欢</div>
+  <hr>
+  <div class="home-noguess" *ngIf="imageModel.length==0">
+    <p>暂无推荐内容哦</p>
+  </div>
+  <div *ngFor="let borrow of imageModel;let i=index" class="img_favorite">
+    <img src={{borrow?.picture?borrow.picture:picture}} (click)="keyup(i)" alt={{borrow.bookName}}>
+    <span>{{borrow.bookName}}</span>
+  </div>
+
+  <div style="clear:left;" *ngIf="page <= totalPages">
+    <div>
+      <button type="button" class="btn btn-default btn_gray" style="font-size:15px;margin-top:23%" (click)="toptFavoriteInfo()">
+        <<</button>&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-default btn_gray" style="font-size:15px;margin-left:18%;margin-top:23%" (click)="nextFavoriteInfo()">>></button>
+    </div>
+  </div>
+
+  <!-- ———————————————————————————————————————————————————————————————————————————————————————————————————————— -->
+  <div class="container foot_back" (click)="Scan()" style="margin-left:65%;margin-top:15%">
+    <!-- <button>测试</button> -->
+    <!-- <span style="font-size:18px;font-family:'楷体';font-weight:bold;color:rgba(58, 58, 73, 0.801)">扫一扫</span> -->
+  </div>
+  <!-- ———————————————————————————————————————————————————————————————————————————————————————————————————————— -->
+</div>

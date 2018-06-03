@@ -1,0 +1,185 @@
+   <div [@fadeIn]> 
+    <!-- 查询按钮以及查询框 -->
+     <div style="width: 350px; margin-left:40%; margin-bottom:10px; margin-top:5%">
+       <app-search [information]="information" [url]="searchUrl" (editData)="query($event)"></app-search>
+     </div>
+     
+       <!-- 表格显示 -->
+      <div class="container" style="margin-top:2%"  >
+         <div class="row">
+               <data-table
+                 (deletesEmit)="deleteDatas($event)"  
+                 [isCheckBox] = "isCheck" [isLink]="isLink" 
+                 [editButton]="btnEdit"  (operat)="operatData($event,editmodal)"   [title]="title" [page] ="page"
+                 [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event,editmodal)" [importButton]="btnImport"
+                 [exportButton] = "btnExport" [total]="total" 
+                 [data]="data" [arr]="arrbutes" (linkClickEmitData)="linkClick($event)" 
+                 [buttonstyle]="btnstyle"   [sizeList]="sizeList"  [paging]="paging" [pageSize]="pageSize" 
+                 (importEmit)="import($event)" (exportEmit)="export()" (addOpen)="open($event,modal)" >
+           </data-table>
+         </div>
+     </div>
+ 
+ 
+     <!-- 第一条数据表示在没有点击添加控件的时候，添加的模态框显示出来 -->
+     <div #modal (click)="draggable()"  class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%"  >
+         <div class="modal-content">
+             <div class="modal-header" >
+                 <button type="button" class="close" (click)="close(modal)">×
+                 </button>
+                 <h4 class="modal-title">
+                 添加教师信息
+                 </h4>
+             </div> 
+            
+             <div class="modal-body">
+                   <form role="form" class="form-horizontal" #form="ngForm">
+                    <div class="form-group">
+                            <label class="col-sm-3 control-label">教师编号：</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"  [(ngModel)]="teacherModel.code"  name="teacherCode" id="addTeachCode" #addTeachCode="ngModel" required  maxlength="12" onkeyup="value=value.replace(/[\W]/g,'')">
+                                <span [hidden]="addTeachCode.valid || addTeachCode.pristine" style="color:#a94442">教师编号是必须的</span>
+                                
+                                <br>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                            <label class="col-sm-3 control-label">教师姓名：</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="addTeachName" #addTeachName="ngModel"  class="form-control"  [(ngModel)]="teacherModel.name"  name="teacherName" maxlength="5" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+                                <span [hidden]="addTeachName.valid || addTeachName.pristine" style="color:#a94442">教师姓名是必须的</span>
+                                <br>
+                            </div>
+                    </div>
+                       
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">性别：</label>
+                        <div class="col-sm-9">
+                            <input type="radio" [(ngModel)]="teacherModel.sex" name="sex" value="男" checked="checked">男 &nbsp;&nbsp;&nbsp;
+                            <input type="radio" [(ngModel)]="teacherModel.sex" name="sex" value="女">女
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">职务：</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"  [(ngModel)]="teacherModel.jobTitlename"  name="jobTitlename" placeholder="请输入职务(可省略)" maxlength="7" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+                                <br>
+                            </div>
+                
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">职称：</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control"  [(ngModel)]="teacherModel.dutyname"  name="duties" placeholder="请输入职称(可省略)" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" maxlength="7">
+                                <br>
+                            </div>
+                        </div>
+                   </form>          
+            </div>
+     
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="close(modal)">关闭
+            </button>
+            <button type="button" class="btn btn-primary" (click)="save(modal)" [disabled]="!addTeachName.valid || !addTeachCode.valid" >
+            添加
+            </button>
+         </div>
+     </div>
+ </div>
+ 
+ <div #editmodal (click)="draggable()" class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%"  >
+         <div class="modal-content">
+             <div class="modal-header">
+                 <button type="button" class="close" (click)="close(editmodal)">×
+                 </button>
+                 <h4 class="modal-title">
+                 编辑教师信息
+                 </h4>
+             </div> 
+            
+             <div class="modal-body">
+                <form role="form" class="form-horizontal" #form="ngForm">
+                
+                        <div class="form-group">
+                                <label class="col-sm-3 control-label">教师编号：</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" disabled="disabled" [(ngModel)]="teacherModel.code"  name="teacherCode" onkeyup="value=value.replace(/[\W]/g,'')">
+                                    <br>
+                                </div>
+                        </div>
+                       <div class="form-group">
+                           <label class="col-sm-3 control-label"> 教师姓名：</label>
+                             <div class="col-sm-9">
+                                 <input type="text" id="editTname" #editTname="ngModel" class="form-control" [(ngModel)]="teacherModel.name"  name="teachername"  maxlength="5" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')" required>
+                                 <span [hidden]="editTname.valid || editTname.pristine.valid" style="color:#a94442">教师姓名是必须的</span>
+                                 <br>
+                             </div>
+                         </div>
+                         <div class="form-group">
+                             <label class="col-sm-3 control-label">性别：</label>
+                               <div class="col-sm-9">
+                                   <input type="radio" [(ngModel)]="teacherModel.sex" name="sex" value="男" checked>男 &nbsp;&nbsp;&nbsp;
+                                   <input type="radio" [(ngModel)]="teacherModel.sex" name="sex" value="女">女
+                                    <br>
+                                    <br>
+                               </div>
+                           </div>
+                           <div class="form-group" style="display:none">
+                               <label class="col-sm-3 control-label">职务：</label>
+                                 <div class="col-sm-9">
+                                     <input type="text" class="form-control"  [(ngModel)]="teacherModel.jobTitlename"  name="authority">
+                                     <br>
+                                 </div>
+                       
+                             </div>
+                             <div class="form-group" style="display:none">
+                                 <label class="col-sm-3 control-label">职称：</label>
+                                   <div class="col-sm-9">
+                                     <input type="text" class="form-control"  [(ngModel)]="teacherModel.dutyname"  name="duties">
+                                     <br>
+                                   </div>
+                             </div>
+                           
+                               
+                </form>
+             </div>
+     
+         <div class="modal-footer">
+             <button type="button" class="btn btn-default" (click)="close(editmodal)">关闭
+             </button>
+             <button type="button" class="btn btn-primary" (click)="updateTeacher(editmodal)" [disabled]="!editTname.valid">
+               提交更改
+             </button>
+         </div>
+     </div>
+ </div>
+ 
+     <!-- 导入文件 -->
+     <p-dialog header="导入文件" [(visible)]="display" modal="modal" width="500" [responsive]="true" >
+         <p>提示：导入前请先下载模板<a style="color:#41ABE9" (click)="down()">点击下载模板</a></p>
+         <div style="text-align:center;display:none">
+           <input #filepath type="file" name="filePath" value="选择文件"  style="display:none" 
+           ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)">
+         </div>
+     
+         <input class="form-control" type="text" placeholder="选择文件" style="width:50%;height:25px;display:inline" [(ngModel)]="filename">
+         
+         <button type="button" pButton  (click)="show(filepath)" label="选择文件"></button>
+           <p-footer>
+             <button type="button" pButton  icon="fa-check" (click)="upload()" label="上传"></button>
+             <button type="button" pButton  icon="fa-close" (click)="display=false" label="取消"></button>
+           </p-footer>
+     </p-dialog>
+
+     <p-dialog header="提示" [(visible)]="displayP" modal="modal" width="400" [responsive]="true">
+        <p style="text-align:center">
+            {{message}}
+        </p>
+        <p-footer>
+            <button type="button" pButton (click)="displayP=false" label="确定">
+            </button>
+        </p-footer>
+     </p-dialog>
+     </div>

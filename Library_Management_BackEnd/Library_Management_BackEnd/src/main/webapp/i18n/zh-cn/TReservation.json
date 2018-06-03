@@ -1,0 +1,29 @@
+{
+    "library": {
+        "TReservation" : {
+            "home": {
+                "title": "T Reservations",
+                "createLabel": "Create a new T Reservation",
+                "createOrEditLabel": "Create or edit a T Reservation",
+                "search": "Search for T Reservation"
+            },
+            "created": "A new T Reservation is created with identifier {{ param }}",
+            "updated": "A T Reservation is updated with identifier {{ param }}",
+            "deleted": "A T Reservation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Reservation {{ id }}?"
+            },
+            "detail": {
+                "title": "T Reservation"
+            },
+            "id": "Id",
+            "userId": "User Id",
+            "bookId": "Book Id",
+            "reservTime": "Reserv Time",
+            "status": "Status",
+            "isannounce": "Isannounce",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

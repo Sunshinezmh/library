@@ -1,0 +1,26 @@
+{
+    "library": {
+        "TFollow" : {
+            "home": {
+                "title": "T Follows",
+                "createLabel": "Create a new T Follow",
+                "createOrEditLabel": "Create or edit a T Follow",
+                "search": "Search for T Follow"
+            },
+            "created": "A new T Follow is created with identifier {{ param }}",
+            "updated": "A T Follow is updated with identifier {{ param }}",
+            "deleted": "A T Follow is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Follow {{ id }}?"
+            },
+            "detail": {
+                "title": "T Follow"
+            },
+            "id": "Id",
+            "userId": "User Id",
+            "followId": "Follow Id",
+            "operterTime": "Operter Time",
+            "unfollow": "Unfollow"
+        }
+    }
+}

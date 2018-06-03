@@ -1,0 +1,11 @@
+<div id="print-section">
+    <div *ngFor="let bc of barcodeList;let i=index" style="float:left;width:40%;margin-top:10px;margin-right:10%">
+      <div style="text-align:center">{{bc.printBookName}}</div>
+      <div style="text-align:center">{{bc.typeName}}</div>
+      <div style="text-align:center"> <img id="bc_{{i}}"/></div>
+    </div>
+  </div>
+  
+  <div style="width: 100%;float: left;text-align: center;margin-top: 30px;">
+      <button class="btn btn-primary" (click)="print()">打印条形码</button>
+  </div>

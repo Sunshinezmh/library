@@ -1,0 +1,27 @@
+{
+    "library": {
+        "TMessageTemplate" : {
+            "home": {
+                "title": "T Message Templates",
+                "createLabel": "Create a new T Message Template",
+                "createOrEditLabel": "Create or edit a T Message Template",
+                "search": "Search for T Message Template"
+            },
+            "created": "A new T Message Template is created with identifier {{ param }}",
+            "updated": "A T Message Template is updated with identifier {{ param }}",
+            "deleted": "A T Message Template is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Message Template {{ id }}?"
+            },
+            "detail": {
+                "title": "T Message Template"
+            },
+            "id": "Id",
+            "classId": "Class Id",
+            "content": "Content",
+            "operateTime": "Operate Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete"
+        }
+    }
+}

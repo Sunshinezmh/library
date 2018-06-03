@@ -1,0 +1,26 @@
+{
+    "library": {
+        "TMessageRecord" : {
+            "home": {
+                "title": "T Message Records",
+                "createLabel": "Create a new T Message Record",
+                "createOrEditLabel": "Create or edit a T Message Record",
+                "search": "Search for T Message Record"
+            },
+            "created": "A new T Message Record is created with identifier {{ param }}",
+            "updated": "A T Message Record is updated with identifier {{ param }}",
+            "deleted": "A T Message Record is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Message Record {{ id }}?"
+            },
+            "detail": {
+                "title": "T Message Record"
+            },
+            "id": "Id",
+            "sender": "Sender",
+            "sendTime": "Send Time",
+            "userId": "User Id",
+            "isdelete": "Isdelete"
+        }
+    }
+}

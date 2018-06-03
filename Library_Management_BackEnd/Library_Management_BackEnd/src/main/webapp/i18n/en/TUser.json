@@ -1,0 +1,32 @@
+{
+    "library": {
+        "TUser" : {
+            "home": {
+                "title": "T Users",
+                "createLabel": "Create a new T User",
+                "createOrEditLabel": "Create or edit a T User",
+                "search": "Search for T User"
+            },
+            "created": "A new T User is created with identifier {{ param }}",
+            "updated": "A T User is updated with identifier {{ param }}",
+            "deleted": "A T User is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T User {{ id }}?"
+            },
+            "detail": {
+                "title": "T User"
+            },
+            "id": "Id",
+            "levelId": "Level Id",
+            "pwd": "Pwd",
+            "authority": "Authority",
+            "qqNumber": "Qq Number",
+            "wechatNumber": "Wechat Number",
+            "email": "Email",
+            "headSculpture": "Head Sculpture",
+            "bgPicture": "Bg Picture",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

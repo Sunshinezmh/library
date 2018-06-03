@@ -1,0 +1,118 @@
+
+hr{
+    margin:0;
+}
+
+img{
+     height:110px;
+     width:80px;
+}
+.left_icon{
+    margin-top:10px;
+}
+.title_top{
+    font-size: 25px;
+    font-family: 楷体;
+}
+.overdue{
+    margin-left: 20px;
+}
+.img_left{
+    margin-top:20px;
+    float:left;
+    margin-left:10px;
+}
+.content{
+    padding-top:50px;
+    max-height: 95%;
+}
+.book_right{
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.return_date{
+    color:#37B1E0;
+    font-size:14px;
+    margin-top:10px;
+    margin-left:8%;
+    position: relative;
+    top:-10px;
+}
+.book_name,.anthur{
+    font-family: 楷体;
+    clear:both;
+    margin-top: -10px;
+    font-size:16px;
+    margin-bottom:0px;
+    margin-left:8%;
+
+}
+
+.image{
+    -moz-box-shadow:3px 3px 4px #000;
+  -webkit-box-shadow:3px 3px 4px #000;
+    box-shadow:3px 3px 4px #000;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+}
+
+.foot_div{
+    clear:left;
+    margin-top:5px;  
+    width:100%;
+    height:5px;
+    background-color:#F2F2F2;
+    /* position: relative;
+    top:15px; */
+}
+
+.btn_right{
+    float:right;
+    margin-right:20px;
+    /* margin-top: -30px; */
+    margin-top: 20px;
+    position: relative;
+    left:20px;
+
+}
+.bookinfo{
+    height:160px;
+    
+}
+    
+.maxbook{
+    /*margin-left: 70%;*/
+    text-align: center;
+    margin-bottom: 10px;
+    padding:5px 10px;
+    background-color: #eeeeee;
+}
+
+.btn-bor{
+    width: 120px;
+    height: 150px;
+    float: right;
+    position: relative;
+    top: -150px;
+    color: #FFFFFF;
+    font-size: x-large;
+    background-color: #FF4040;
+}
+.row{
+    margin-left: 3px;
+    width:95%;
+}
+.already{
+    width:95%;
+}
+.reservtion{
+    margin-bottom: 70px;
+    position: relative;
+    top:85px;
+    right:90px;
+}
+.msg{
+    height:20px;
+     margin-top:-5px;
+    margin-left: 10px;
+}

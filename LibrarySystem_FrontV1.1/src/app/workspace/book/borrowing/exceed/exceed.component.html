@@ -1,0 +1,22 @@
+<div class="home-noguess" *ngIf="borrowDetailsExceed.length==0">
+
+  <p style="font-size:16px;margin-top:100px;text-align:center;color:#AAAAAA;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+  没有超期信息</p>
+</div>
+<div style="clear:left;" *ngFor="let borrow of borrowDetailsExceed,let i = index">
+  <img class="img image img_left " alt="书的封面" src="{{borrow.picture?borrow.picture:backPicture}}" (click)="keyup(i)" />
+
+  <div class="col-xs-8 book_right">
+    <div class="book_name" style="text-align:center" (click)="keyup(i)">{{borrow.name}}</div>
+    <div class="return_date">应还日期:{{convertDate(borrow.endDate)}} </div>
+    <div>
+      <span id={{borrow.id}} class="msg">{{borrowMessage[i]}}</span>
+      <input class="btn btn-default btn_right" type="button" value="续借" (click)="continueBorrow(i)">
+    </div>
+  </div>
+  <div class="foot_div"></div>
+
+</div>
+<div *ngIf=" page < totalPages" class="maxbook">
+  <span (click)="manyBook()">更多</span>
+</div>

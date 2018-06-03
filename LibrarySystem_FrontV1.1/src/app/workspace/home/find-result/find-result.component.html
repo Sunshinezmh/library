@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+    <div class="container ">
+        <div class="header">
+            <div class="back_icon">
+                <i class="fa fa-chevron-left left_icon" (click)="routeToSearch()"></i>
+            </div>
+            <span>查询结果</span>
+            <div class="right_icon">
+                <i class="fa fa-search " aria-hidden="true" (click)="routeToSearch()"></i>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="content">
+    <div class="line-wrapper" *ngFor="let book of borrowDetailW">
+        <div class="line-scroll-wrapper" #scorewrapper>
+            <div class="line-normal-wrapper" #nomalwrapper>
+                <img class="img" src={{book.picture?book.picture:backPicture}} (click)="routeToBookInfo(book)" />
+                <div class="book_name" (click)="routeToBookInfo(book)">{{book.bookName}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div *ngIf="page < totalPages" class="footer_div" (click)="nextPage()">
+    <p>更多。。。</p>
+</div>
+
+<p-growl [(value)]="msgs"></p-growl>

@@ -1,0 +1,71 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+  <div class="container ">
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-4 home-title ">我的足迹</div>
+    </div>
+
+  </div>
+</nav>
+
+<div class="content" #content>
+  <!-- 灰色分割带 -->
+
+  <div class="user_info">
+    <span>
+      <img class="user_photo" (click)="routeToPersonInfo()" src={{picture}} height="40">
+    </span>
+    <label class="user_name" (click)="routeToPersonInfo()">{{userName}}</label>
+  </div>
+
+  <!-- 灰色分割带 -->
+  <div *ngIf="borrowDetailW != null && borrowDetailW.length>0" class="gray_area"></div>
+
+  <div *ngIf="borrowDetailW != null && borrowDetailW.length>0" class="container">
+    <div class="row" >
+        <p style="font-size:20px;font-family:'楷体';">还书提醒</p>
+      <div class="col-xs-10  borrow_div" >
+        <div *ngFor="let borrow of borrowDetailW" class="borrow_book">
+          <img src={{borrow?.picture?borrow.picture:backPicture}} class="book_picture" (click)="borrowing()">
+          <div class="book_info"  (click)="borrowing()">
+            <h5>书名：{{borrow.name}}</h5>
+            <h5>还书日期：{{borrow.endDate}}</h5>
+          </div>
+        </div>
+        <span *ngIf="page<totalPages" (click)="nextPage()">更多</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- 灰色分割带 -->
+  <div *ngIf="borrowDetailW != null && borrowDetailW.length>0" class="gray_area"></div>
+  <div>
+    <div class="foot_div" (click)="borrowing()">
+      <a> 我的借阅
+        <i class="fa fa-chevron-right right-icon"></i>
+      </a>
+    </div>
+    <div class="foot_div" (click)="reservation()">
+      <a>借阅详情</a>
+      <a class="right-icon">
+        <i class="fa fa-chevron-right "></i>
+      </a>
+    </div>
+  </div>
+
+  <div *ngIf="reservebooks != null && reservebooks.length>0" class="foot_div" (click)="reservebook()">
+    <a>我的预约</a>
+    <a class="right-icon">
+      <!-- {{reserveCount}}本可借<i class="fa fa-chevron-right " ></i></a> -->
+      <i class="fa fa-chevron-right "></i>
+    </a>
+  </div>
+  <div class="foot_div" (click)="collection()">
+    <a class="fontStyles">我的书架
+      <i class="fa fa-chevron-right right-icon"></i>
+    </a>
+  </div>
+
+
+</div>

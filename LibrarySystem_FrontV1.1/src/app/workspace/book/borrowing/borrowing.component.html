@@ -1,0 +1,52 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-1" (click)="routeToBook()">
+        <i class="fa fa-chevron-left left_icon"></i>
+      </div>
+      <div class="col-xs-8 col-xs-offset-2 title_top ">我的借阅记录</div>
+    </div>
+  </div>
+</nav>
+<hr>
+
+<div class="content">
+  <tabset>
+    <tab heading="待还" id="overdue">
+      <p *ngIf="borrowDetailsStay==null" style="font-size:16px;margin-top:100px;text-align:center;color:#AAAAAA;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+        没有待还信息</p>
+
+      <div style="clear:left" class="bookinfo" *ngFor="let borrow of borrowDetailsStay,let i = index">
+        <img class="img image img_left " alt="书的封面" src="{{borrow.picture?borrow.picture:backPicture}}" (click)="keyup(i)" />
+        <div class="col-xs-8 book_right">
+          <div class="anthur" (click)="keyup(i)"> {{borrow.name}}</div>
+          <!-- <a *ngIf="reservationcount[i]>0" class="reservtion" (click)="reserveInfo(i)"> {{reservationcount[i]}}人正在预约该书 </a> -->
+          <a *ngIf="reservationcount[i]>0" class="reservtion"> {{reservationcount[i]}}人正在预约该书 </a>
+          <div class="return_date">应还日期：{{convertDate(borrow.endDate)}} </div>
+
+          <div class="msg"> <span id={{borrow.id}}>{{borrowMessage[i]}}</span></div>
+
+          <input class="btn btn-default btn_right" type="button" value="续借" (click)="continueBorrow(i)">
+          <a href="#" ui-sref="app.toMenu" ui-sref-opts="{reload:true}"></a>
+
+          <input class="btn btn-default btn_right" type="button" value="还书" (click)="routeTouploadpicture(i)">
+          <a href="#" ui-sref="app.toMenu" ui-sref-opts="{reload:true}"></a>
+        </div>
+
+        <div class="foot_div"></div>
+      </div>
+
+      <!-- <div *ngIf=" page < totalPages" class="maxbook">
+          <span (click)="manyBook()">更多</span>
+        </div> -->
+    </tab>
+    <tab heading="超期" class="overdue">
+      <app-exceed> </app-exceed>
+    </tab>
+    <tab heading="已还" class="already()">
+      <app-already> </app-already>
+    </tab>
+
+  </tabset>
+</div>

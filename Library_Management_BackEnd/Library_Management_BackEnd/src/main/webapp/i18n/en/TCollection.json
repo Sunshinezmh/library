@@ -1,0 +1,27 @@
+{
+    "library": {
+        "TCollection" : {
+            "home": {
+                "title": "T Collections",
+                "createLabel": "Create a new T Collection",
+                "createOrEditLabel": "Create or edit a T Collection",
+                "search": "Search for T Collection"
+            },
+            "created": "A new T Collection is created with identifier {{ param }}",
+            "updated": "A T Collection is updated with identifier {{ param }}",
+            "deleted": "A T Collection is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Collection {{ id }}?"
+            },
+            "detail": {
+                "title": "T Collection"
+            },
+            "id": "Id",
+            "isbn": "Isbn",
+            "operateTime": "Operate Time",
+            "userId": "User Id",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

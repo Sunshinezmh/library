@@ -1,0 +1,52 @@
+.header{
+    line-height: 50px;
+}
+.header div{
+    float:left;
+    text-align: center;
+    font-size: 16px;
+}
+.header div:last-child{
+    float: right;
+    margin-right: 10px;
+}
+.header div:first-child{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.book_info{
+    margin-left: 12px;
+    clear:left;
+    font-family: 楷体;
+    font-size: 20px;
+}
+.book_name{
+    width: 100%;
+    padding-top: 10%;
+    font-size: 18px;
+    font-family: 楷体;
+    line-height: 100%;
+    text-align: center;
+    margin-left:8px;
+    word-wrap: break-word;
+}
+img{
+    height:100px;
+    margin-top:5px;
+    width:20%;
+    float:left;
+}
+.content{
+    padding-top:60px;max-height: 95%;
+    overflow: auto;
+}
+.line-wrapper { width: 97%; height: 120px; overflow: hidden; font-size: 28px;margin-left: 3%; border-bottom: 1px solid #aaa; }
+.line-scroll-wrapper { white-space: nowrap; height: 80px; clear: both; }
+.line-normal-wrapper { display: inline-block; line-height: 100px; float: left; width:100%;padding-top:5px;padding-bottom: 5px;  } 
+.img_container{
+    float: left;
+    width:23%;  
+    /* margin-left:5%; */
+    margin:0.1% 5% 0.1% 5%;
+    padding: 10px;
+}

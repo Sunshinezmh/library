@@ -1,0 +1,84 @@
+<nav class="navbar navbar-default navbar-fixed-top nav_top">
+    <div class="container ">
+        <div class="header">
+            <div class="back_icon">
+                <i class="fa fa-chevron-left left_icon" (click)="routeToHome()"></i>
+            </div>
+            <span class="form-signin-heading reservation_info">书籍详情</span>
+            <div class="right_icon">
+                <i class="fa fa-search " aria-hidden="true" (click)="routeTosearch()"></i>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="content">
+    <div class="container ">
+        <div class="row">
+            <div class="col-xs-7 col-xs-offset-1 ">
+                <p>
+                    <b>书名：</b>{{borrowDetailW.bookName}}
+                </p>
+                <p>
+                    <b>作者：</b>{{borrowDetailW.author}}
+                </p>
+                <p>
+                    <b>ISBN:</b>{{isbn}}
+                </p>
+                <p>
+                    <b>书籍位置：</b>{{position}}
+                </p>
+                <br>
+                <p>
+                    <b>库存数量：</b>{{borrowDetailWCount.useNum}}
+                </p>
+            </div>
+            <div class="col-xs-4 book">
+                <img src={{borrowDetailW.picture?borrowDetailW.picture:backPicture}} />
+
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div class="row book_info">
+            <p>简介</p>
+            <div class="col-xs-12 info">
+                <p contenteditable="true" name="summary" aria-disabled="true" contenteditable="false">{{borrowDetailW.summary}}</p>
+            </div>
+            <p>
+                <b>目录</b>
+            </p>
+            <div class="col-xs-12 info">
+                <pre style="background-color:rgb(255, 255, 255);">{{borrowDetailW.content}}</pre>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="nav">
+    <ul>
+        <li>
+            <span>
+                <img (click)="Borrow()" src={{imgReservationUrl}}>
+            </span>
+            <input type="lable" class="Borrow" [(ngModel)]="borrowORreserve" (click)="Borrow()" readonly>
+
+
+        </li>
+        <li style="position:relative;">
+            <span>
+                <img (click)="AddBookrack()" src={{imgCollectionUrl}}>
+            </span>
+            <span>加入书架</span>
+        </li>
+    </ul>
+
+    
+</div>
+
+<p-growl [(value)]="msgs"></p-growl>

@@ -1,0 +1,30 @@
+{
+    "library": {
+        "TLevel" : {
+            "home": {
+                "title": "T Levels",
+                "createLabel": "Create a new T Level",
+                "createOrEditLabel": "Create or edit a T Level",
+                "search": "Search for T Level"
+            },
+            "created": "A new T Level is created with identifier {{ param }}",
+            "updated": "A T Level is updated with identifier {{ param }}",
+            "deleted": "A T Level is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Level {{ id }}?"
+            },
+            "detail": {
+                "title": "T Level"
+            },
+            "id": "Id",
+            "integralId": "Integral Id",
+            "count": "Count",
+            "duration": "Duration",
+            "times": "Times",
+            "operterTime": "Operter Time",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}

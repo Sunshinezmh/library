@@ -1,0 +1,48 @@
+
+hr{
+    margin:0;
+}
+
+img{
+     height:110px;
+     width:80px;
+}
+.left_icon{
+    margin-top:10px;
+}
+.title_top{
+    font-size: 25px;
+    font-family: 楷体;
+    margin-left: 80px;
+    margin-top:10px;
+}
+.container{
+    margin-top:1%;
+  }
+  .form-group{
+    padding-top:10px;
+    clear:left;
+  
+  }
+  .left-nav{
+    padding-left: 25%;
+  }
+  .right-nav{
+    margin-top:10px;
+  }
+  
+  .btn-div{
+    padding-left: 0;
+  }
+  .modal-dialog{
+    position:absolute;
+    left:30%;
+    top:20%
+  }
+  .modal-footer{
+    margin-top:20px;
+  }
+  
+  .showPicture{
+    margin-top:10px;
+  }

@@ -1,0 +1,15 @@
+{
+    "data": [
+      {	
+        "id": "d290f1ee6c544b0190e6",
+        "studentcode": "13060141012",
+        "studentname": "张三",
+        "college": "化材学院",
+        "major": "化学",
+        "class": "13化学一班",
+        "iphonenum": "12345678901",
+        "Emaill": "123@163.com"
+      }
+     ],
+    "total": 20
+  }

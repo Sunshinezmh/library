@@ -1,0 +1,204 @@
+<div [@fadeIn]>
+<!-- 查询按钮以及查询框 -->
+<div style="width: 350px; margin-left:40%; margin-bottom:10px; margin-top:5%">
+  <app-search type= 'text' [information]="information" maxlength=2 [url]="searchUrl" (editData)="query($event)"></app-search>
+</div>
+
+<!-- 树组件 -->
+<div class="col-md-2" id="treemenu" style="width:80px;margin-bottom:10px" >
+  <app-tree [institutionId]="treeURL" [treeTitle]="'学校组织机构'" (editData)="treeClick($event)"></app-tree>
+</div>
+
+
+  <!-- 表格显示 -->
+<div class="container" style="margin-left:220px ;margin-bottom:10px"  >
+    <div class="row">
+          <data-table
+            (deletesEmit)="deleteDatas($event)"  
+             [isCheckBox] = "isCheck" [isLink]="isLink"
+            [editButton]="btnEdit" (operat)="operatData($event,editModal)"   [title]="title" [page] ="page"
+            [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event,editModal)" [importButton]="btnImport"
+            [exportButton] = "btnExport" [total]="total" (linkClickEmitData)="linkClick($event)"
+            [data]="data" [arr]="arrbutes" (exportEmit)="export()"  
+            [buttonstyle]="btnstyle"   [sizeList]="sizeList" 
+            [paging]="paging" [pageSize]="pageSize" (importEmit)="import($event)" 
+            (addOpen)="open($event,modal)" >
+      </data-table>
+    </div>
+</div>
+
+<!-- 添加打开模态框 -->
+<div #modal class="modal-dialog" (click)="draggable()" style="visibility:hidden;position:absolute;left:30%;top:20%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" (click)="close(modal)">×
+            </button>
+            <h4 class="modal-title">
+                添加学生信息
+            </h4>
+        </div>
+        <div class="modal-body">
+            <form role="form" class="form-horizontal" #addform="ngForm">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">学号：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.code" #code="ngModel"  onkeyup="value=value.replace(/[\W]/g,'')" name="studentcode" maxlength="13" number required>
+                    <p class="text-danger" [hidden]="code.valid || code.pristine">要求输入学号</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">姓名：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.name" #studentName="ngModel" name="studentname" [rangeLength]="[2, 4]" maxlength="4" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+                    <p class="text-danger" [hidden]="studentName.valid || studentName.pristine">要求输入名称</p>
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <label class="col-sm-3 control-label"> 学院：</label>
+                <div class="col-sm-9">
+                    <select #sel class="form-control" [(ngModel)]="institutionId" name="institutionId" (change)="onchangeInstitution($event.target.value)" required>
+                        <option *ngFor="let option of institutionOptions" [value]="option.id">{{option.institutionName}}</option>
+                    </select>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label class="col-sm-3 control-label">专业：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.professionName" #code="ngModel" name="professionName" maxlength="13" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">班级：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.classesName" #code="ngModel" name="classesName" maxlength="13" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">                    
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">手机号：</label>
+                <div class="col-sm-9">
+                    <input type="tel" class="form-control" [(ngModel)]="addStudentModel.telNum" phone="CN" #telNum="ngModel" minlength="11" maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'')" name="iphonenum"  required>
+                    <p class="text-danger" [hidden]="telNum.valid || telNum.pristine">手机号格式不正确</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Email地址：</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" [(ngModel)]="addStudentModel.email" #email="ngModel"  name="Email" maxlength="50" email required>
+                    <p class="text-danger" [hidden]="email.valid || email.pristine">Email邮箱格式不正确</p>
+                </div>
+            </div>
+            </form>
+        </div>
+
+         <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="close(modal)">关闭
+            </button>
+            <button type="button" class="btn btn-primary"  [disabled]="!addform.form.valid" (click)="save(modal)">
+            添加
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- 编辑打开模态框editModal -->
+<div #editModal (click)="draggable()" class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" (click)="close(editModal)">×
+            </button>
+            <h4 class="modal-title">
+                编辑学生信息
+            </h4>
+        </div>
+        <div class="modal-body">
+            <form role="form" class="form-horizontal" #editform="ngForm">
+            <div class="form-group">
+                <label class="col-sm-3 control-label">学号：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.code" name="code" readonly="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">姓名：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.name" name="studentname" #studentName="ngModel" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+                    <p class="text-danger" [hidden]="studentName.valid || studentName.pristine">要求输入名称</p>
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <label class="col-sm-3 control-label"> 学院：</label>
+                <div class="col-sm-9">
+                    <select #sel class="form-control" [(ngModel)]="addStudentModel.institutionId" name="institutionId" (change)="onchangeInstitution($event.target.value)" required>
+                         <option *ngFor="let option of institutionOptions" [value]="option.id">{{option.institutionName}}</option>
+                    </select>
+                </div>
+            </div> -->
+            <div class="form-group">
+                <label class="col-sm-3 control-label">专业：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.professionName" #code="ngModel" name="professionName" maxlength="13" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">班级：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.classesName" #code="ngModel" name="classesName" maxlength="13" required onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">                                        
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label">手机号：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.telNum" onkeyup="value=value.replace(/[^\d]/g,'')" name="telNum" phone="CN" #telNum="ngModel" minlength="11" maxlength="11" required>
+                    <p class="text-danger" [hidden]="telNum.valid || telNum.pristine">手机号格式不正确</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 control-label"> Email地址：</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" [(ngModel)]="addStudentModel.email" name="email" #email="ngModel" maxlength="50" email >
+                    <p class="text-danger" [hidden]="email.valid || email.pristine">Email邮箱格式不正确</p>
+                </div>
+            </div>
+        </form>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" (click)="close(editModal)">关闭
+            </button>
+            <button type="button" class="btn btn-primary" [disabled]="!editform.form.valid" (click)="updateStudent(editModal)">
+                提交
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 导入文件 -->
+  <p-dialog header="导入文件" [(visible)]="display" modal="modal" width="500" [responsive]="true" >
+    <p>提示：导入前请先下载模板<a style="color:#41ABE9" (click)="down()">点击下载模板</a></p>
+    <div style="text-align:center;display:none">
+      <input #filepath type="file" name="filePath" value="选择文件"  style="display:none" 
+      ng2FileSelect [uploader]="uploader" (change)="selectedFileOnChanged($event)">
+    </div>
+
+    <input class="form-control" type="text" placeholder="选择文件" style="width:50%;height:25px;display:inline" [(ngModel)]="filename">
+    
+    <button type="button" pButton  (click)="show(filepath)" label="选择文件"></button>
+      <p-footer>
+        <button type="button" pButton  icon="fa-check" (click)="upload()" label="上传"></button>
+        <button type="button" pButton  icon="fa-close" (click)="display=false" label="取消"></button>
+      </p-footer>
+  </p-dialog>
+
+  <p-dialog header="提示" [(visible)]="displayP" modal="modal" width="400" [responsive]="true">
+    <p style="text-align:center">
+        {{message}}
+    </p>
+    <p-footer>
+        <button type="button" pButton (click)="displayP=false" label="确定">
+        </button>
+    </p-footer>
+  </p-dialog>
+  </div>

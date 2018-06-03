@@ -1,0 +1,49 @@
+.my_canlender{
+    width:100px;
+}
+
+input{
+    width:400px;
+}
+.modal-footer{
+    clear:left;
+}
+/*----------出版社与分类input框的间距----*/
+.col-sm-7 {
+    width: 58.33333333%;
+    height: 40px;
+}
+#treemenu{
+width: 150px;
+}
+.panel panel-default{
+    width:150px;
+}
+
+#linda{
+    height: 100%;
+}
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #B1CCF3; /* green */
+  }
+
+.ng-invalid:not(form)  {
+border-left: 5px solid #a94442; /* red */
+}
+
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .condition{
+    border-width: none;
+    border-radius: 5px;
+    outline: none;
+    height: 35px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    width: 240px;
+}

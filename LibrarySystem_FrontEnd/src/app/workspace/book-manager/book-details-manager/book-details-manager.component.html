@@ -1,0 +1,146 @@
+<!-- 查询框组件 -->
+<div class="search_div">
+  <input class="condition" type="text" name="123" placeholder="/索书号/书名/isbn/来源" [(ngModel)]="condition" />
+  <button type="button" class="btn btn-primary btn" (click)="query()">查询</button>
+</div>
+<!-- ******************************************************************* -->
+
+
+<!-- 提示框组件 -->
+<p-dialog header="提示" [(visible)]="display" modal="modal" width="400" [responsive]="true">
+  <p style="text-align:center">
+    {{message}}
+  </p>
+  <p-footer>
+    <button type="button" pButton (click)="display=false" label="确定">
+    </button>
+  </p-footer>
+</p-dialog>
+<!-- ***************************************************************** -->
+<!-- 删除提示框 -->
+<p-confirmDialog header="提示" icon="fa fa-question-circle" width="425"></p-confirmDialog>
+
+
+<!-- 表格显示 -->
+<div class="container" style="margin-left:220px ;margin-bottom:10px">
+  <div class="row">
+    <data-table (deletesEmit)="deleteDatas($event)" (coustomData)="browseBarcode($event)" [ButtonHeaders]="ButtonHeaders" [isCheckBox]="isCheck"
+      [editButton]="btnEdit" [title]="title" [page]="page" [addButton]="btnAdd" [deleteButton]="btnDelete" (editData)="edit($event,editModal)"
+      [importButton]="btnImport" [exportButton]="btnExport" [total]="total" [data]="data" [arr]="arrbutes" (changepage)="changepage($event)"
+      [buttonstyle]="btnstyle" [sizeList]="sizeList" [paging]="paging" [pageSize]="pageSize">
+    </data-table>
+  </div>
+</div>
+
+
+
+<div #editModal (click)="draggable()" class="modal-dialog" style="visibility:hidden;position:absolute;left:30%;top:20%">
+  <div class="modal-content" id="linda">
+    <div class="modal-header">
+      <button type="button" class="close" (click)="close(editModal)">×
+      </button>
+      <h4 class="modal-title">
+        编辑图书信息
+      </h4>
+    </div>
+    <br>
+
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="col-sm-3 control-label">ISBN：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.isbn" name="isbn">
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">索书号：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.searchNum" name="searchNum" disabled>
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">书名：</label>
+        <div class="col-sm-9">
+          <input type="text" maxlength="80" class="form-control" [(ngModel)]="bookInfoManagerModel.bookName" name="bookName" maxlength="50">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label"> 作者：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.author" name="author" maxlength="50">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label"> 书籍位置：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.location" name="location" maxlength="50">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label">页数：</label>
+        <div class="col-sm-9">
+          <input type="Number" class="form-control" id="totalpage" name="totalpage" [(ngModel)]="bookInfoManagerModel.totalpage" #appLte="ngModel">
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">出版社：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" maxlength="255" [(ngModel)]="bookInfoManagerModel.publishPlace" name="publishPlace">
+          <br>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">出版时间：</label>
+        <div class="col-sm-9">
+          <input type="date" class="form-control" name="publishtime" [(ngModel)]="bookInfoManagerModel.publishtime">
+          <br>
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label style=margin-top:20px class="col-sm-3 control-label">分类：</label>
+        <div style=margin-top:20px class="col-sm-9">
+          <select #sel class="form-control" [(ngModel)]="bookInfoManagerModel.typeName" name="typeName" required>
+            <option *ngFor="let option of typeInfoModels" [value]="option.name">{{option.name}}</option>
+          </select>
+          <br>
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label"> 来源：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" maxlength="50" [(ngModel)]="bookInfoManagerModel.owner" name="owner">
+          <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-3 control-label"> 备注：</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" [(ngModel)]="bookInfoManagerModel.remark" name="remark">
+          <br>
+        </div>
+      </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="close(editModal)">关闭
+      </button>
+      <button type="button" class="btn btn-primary" (click)="updateBookInfo(editModal,bookInfoManagerModel)">
+        提交更改
+      </button>
+    </div>
+  </div>
+
+</div>

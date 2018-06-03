@@ -1,0 +1,40 @@
+<!-- <div [@fadeIn]> -->
+<div #modal class="modal-dialog" style="margin-top:7%">
+    <form #myForm="ngForm">
+        <div class="form-group">
+          <label for="borrNum">可借阅数量/本：</label>
+          <input type="text" class="form-control" maxlength="2" name="borrowingNumber" [(ngModel)]="basicsetting.borrowingNumber" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')" required>
+        </div>
+        <div class="form-group">
+          <label for="reNum">续借次数：</label>
+          <input type="text" class="form-control" maxlength="2" name="renewNumber" [(ngModel)]="basicsetting.renewNumber" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">借阅时长/天：</label>
+          <input type="text" class="form-control" maxlength="2"  name="borrowingTime" [(ngModel)]="basicsetting.borrowingTime" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">预约次数：</label>
+          <input type="text" class="form-control" maxlength="2"  name="reservationCount" [(ngModel)]="basicsetting.reservationCount" placeholder="请输入数字" onkeyup="value=value.replace(/[^\d]/g,'')" required>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">备注：</label>
+            <input type="text" class="form-control" maxlength="20"  name="remark" [(ngModel)]="basicsetting.remark" placeholder="备注" onkeyup="value=value.replace(/[^\w\u4E00-\u9FA5]/g, '')">
+        </div>
+        <br>
+        <br>
+        <button type="cancel"  class="btn btn-default cdd" (click)="close()">取消</button>
+        <button type="submit" class="btn btn-default cdd" (click)="submit()" [disabled]="!myForm.form.valid" >确定</button>
+      </form>
+      <p-dialog header="提示" [(visible)]="displayP" modal="modal" width="400" [responsive]="true">
+        <p style="text-align:center">
+            {{message}}
+        </p>
+        <p-footer>
+            <button type="button" pButton (click)="displayP=false" label="确定">
+            </button>
+        </p-footer>
+      </p-dialog>
+
+</div>
+

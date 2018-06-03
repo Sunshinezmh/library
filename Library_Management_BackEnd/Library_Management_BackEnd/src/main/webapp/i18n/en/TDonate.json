@@ -1,0 +1,37 @@
+{
+    "library": {
+        "TDonate" : {
+            "home": {
+                "title": "T Donates",
+                "createLabel": "Create a new T Donate",
+                "createOrEditLabel": "Create or edit a T Donate",
+                "search": "Search for T Donate"
+            },
+            "created": "A new T Donate is created with identifier {{ param }}",
+            "updated": "A T Donate is updated with identifier {{ param }}",
+            "deleted": "A T Donate is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete T Donate {{ id }}?"
+            },
+            "detail": {
+                "title": "T Donate"
+            },
+            "id": "Id",
+            "donateName": "Donate Name",
+            "autor": "Autor",
+            "publishTime": "Publish Time",
+            "isbn": "Isbn",
+            "donateTime": "Donate Time",
+            "name": "Name",
+            "donCount": "Don Count",
+            "donMoney": "Don Money",
+            "donType": "Don Type",
+            "donaterType": "Donater Type",
+            "auditReason": "Audit Reason",
+            "auditStatus": "Audit Status",
+            "operator": "Operator",
+            "isDelete": "Is Delete",
+            "remark": "Remark"
+        }
+    }
+}
